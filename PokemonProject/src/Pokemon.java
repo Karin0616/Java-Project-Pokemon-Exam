@@ -1,5 +1,5 @@
 
-public class Pokemon {
+public class Pokemon extends UserData {
 	protected Pokemon_Name name;
 	protected float HP;
 	protected int ATK;
