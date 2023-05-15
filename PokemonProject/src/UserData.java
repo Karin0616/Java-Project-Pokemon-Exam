@@ -14,8 +14,8 @@ public class UserData {
 		this.trainerLV=trainerLV;
 		this.Candy=Candy;
 	}
-	public Pokemon getPokemon() {
-		
+	public Pokemon[] getPokemon() {
+		return this.gotPokemon;
 	}
 	public int getTrainnerLv() {
 		return this.trainerLV;

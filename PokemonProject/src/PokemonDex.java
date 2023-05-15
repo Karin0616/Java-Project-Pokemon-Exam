@@ -1,6 +1,6 @@
 
 public class PokemonDex {
-	private static PokemonDex PDex[] = new PokemonDex[20];
+	private static PokemonDex PDex[] = new PokemonDex[30];
 	private int indexNum;
 	private String place;
 	private String PokemonName;
