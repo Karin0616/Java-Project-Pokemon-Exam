@@ -68,7 +68,7 @@ public class PokemonDex {
 		return PDex[dex].PokemonName;
 		
 	}
-	public String getNameA() {
+	public static String getNameA() {
 		return this.PokemonName;
 		
 	}

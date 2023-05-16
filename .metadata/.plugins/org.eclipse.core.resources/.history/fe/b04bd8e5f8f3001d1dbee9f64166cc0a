@@ -17,18 +17,7 @@ public class SkillDex {
     // Singleton pattern to ensure only one instance of SkillDex is created
 
 
-    private SkillDex(int indexNum,String name, float power, float ATKnurf, float DEFnurf, String type) {
-		// TODO Auto-generated constructor stub
-    	this.indexNum=indexNum;
-    	this.name=name;
-    	this.power=power;
-    	this.ATKnurf=ATKnurf;
-    	this.DEFnurf=DEFnurf;
-    	this.type=type;
-    	
-	}
-
-	public static SkillDex[] getInstance() {
+    public static SkillDex getInstance() {
     	try {
             BufferedReader reader = new BufferedReader(new FileReader("skillInfo.csv"));
             String line;
@@ -36,13 +25,12 @@ public class SkillDex {
             while ((line = reader.readLine()) != null && i < 9) {//스킬총수
                 String[] values = line.split(",");
                 int indexNum = Integer.parseInt(values[0]);
-                String name= values[1];
-                float power = Float.parseFloat(values[2]);
-                float ATKnurf = Float.parseFloat(values[3]);
-                float DEFnurf = Float.parseFloat(values[4]);
-                String type = values[5];
+                float power = Float.parseFloat(values[1]);
+                float ATKnurf = Float.parseFloat(values[2]);
+                float DEFnurf = Float.parseFloat(values[3]);
+                String type = values[4];
                 
-                SDex[i] = new SkillDex(indexNum,name,power,ATKnurf,DEFnurf,type );
+                SDex[i] = new SkillDex(indexNum,power,ATKnurf,DEFnurf,type );
                 i++;
             }
             reader.close();
@@ -51,7 +39,7 @@ public class SkillDex {
             e.printStackTrace();
         }
 		
-		return SDex;
+		return PDex;
     }
 
     // Getter and setter methods

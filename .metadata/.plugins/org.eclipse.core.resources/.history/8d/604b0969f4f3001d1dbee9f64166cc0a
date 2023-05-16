@@ -23,10 +23,10 @@ public class PokemonDex {
         this.setPlace(place);
         this.PokemonName = pokemonName;
         this.setBaseStatus(baseStatus);
-        this.setLv(lv);
-        this.setEveLv(eveLv);
-        this.setType(type);
-        this.setSkillIndexNum(skillIndexNum);
+        this.Lv = lv;
+        this.EveLv = eveLv;
+        this.type = type;
+        this.skillIndexNum = skillIndexNum;
     }
 	public static PokemonDex[] getInstance() {
 		try {
@@ -68,10 +68,6 @@ public class PokemonDex {
 		return PDex[dex].PokemonName;
 		
 	}
-	public String getNameA() {
-		return this.PokemonName;
-		
-	}
 	public int getIndexNum() {
 		return indexNum;
 	}
@@ -84,34 +80,10 @@ public class PokemonDex {
 	public void setPlace(String place) {
 		this.place = place;
 	}
-	public float getBaseStatus(int num) {
-		return baseStatus[num];
+	public float[] getBaseStatus() {
+		return baseStatus;
 	}
 	public void setBaseStatus(float baseStatus[]) {
 		this.baseStatus = baseStatus;
-	}
-	public int getLv() {
-		return Lv;
-	}
-	public void setLv(int lv) {
-		this.Lv = lv;
-	}
-	public int getEveLv() {
-		return EveLv;
-	}
-	public void setEveLv(int eveLv) {
-		this.EveLv = eveLv;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	public int[] getSkillIndexNum() {
-		return skillIndexNum;
-	}
-	public void setSkillIndexNum(int[] skillIndexNum) {
-		this.skillIndexNum = skillIndexNum;
 	}
 }

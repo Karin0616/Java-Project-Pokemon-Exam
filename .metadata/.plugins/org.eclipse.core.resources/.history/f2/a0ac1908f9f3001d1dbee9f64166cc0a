@@ -28,7 +28,7 @@ public class SkillDex {
     	
 	}
 
-	public static SkillDex[] getInstance() {
+	public static SkillDex getInstance() {
     	try {
             BufferedReader reader = new BufferedReader(new FileReader("skillInfo.csv"));
             String line;

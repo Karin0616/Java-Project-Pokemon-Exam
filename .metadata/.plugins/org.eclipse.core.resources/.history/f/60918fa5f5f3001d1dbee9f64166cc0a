@@ -68,10 +68,6 @@ public class PokemonDex {
 		return PDex[dex].PokemonName;
 		
 	}
-	public String getNameA() {
-		return this.PokemonName;
-		
-	}
 	public int getIndexNum() {
 		return indexNum;
 	}
