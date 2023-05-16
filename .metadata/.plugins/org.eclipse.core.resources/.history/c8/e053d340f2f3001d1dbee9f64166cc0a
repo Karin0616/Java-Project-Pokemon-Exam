@@ -1,0 +1,17 @@
+
+public class Pokemon_Main {
+	static UserData user = new UserData();
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PokemonDex pdex[] = PokemonDex.getInstance();
+		Game_Display.StartScreen();
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

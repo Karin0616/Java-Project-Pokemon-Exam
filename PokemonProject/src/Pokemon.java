@@ -1,13 +1,13 @@
 
 public class Pokemon extends UserData {
-	protected Pokemon_Name name;
+	protected String name;
 	protected float HP;
 	protected int ATK;
 	protected int DEF;
 	protected int SPD;
 	protected String type;
 	protected int Lv;
-	protected Skill_Name skillname;
+	protected String skillname;
 	public int add = 0;
 	 
 	public Pokemon() {

@@ -3,12 +3,11 @@ import java.util.Scanner;
 public class Game_Display {
 	static Scanner GameScan = new Scanner(System.in);
 	private static int num;
+	
 	public Game_Display(){
 		
 	}
-	public Game_Display(int num) {
-		
-	}
+	
 	public static void StartScreen() {
 		//타이틀화면
 		System.out.println("포켓몬스터");
@@ -24,6 +23,12 @@ public class Game_Display {
 					Game_Display.MainScreen();
 					break;
 				case 2://불러오기
+					try {
+						SaveLoadManager.loadData(Pokemon_Main.user);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					break;
 				case 3://끝내기
 					GameScan.close();
@@ -61,6 +66,7 @@ public class Game_Display {
 				case 3://포켓몬박스
 					break;
 				case 4://저장
+					SaveLoadManager.saveData(Pokemon_Main.user);
 					break;
 				case 5://타이틀로
 					StartScreen();

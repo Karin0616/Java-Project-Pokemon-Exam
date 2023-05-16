@@ -54,12 +54,12 @@ public class SaveLoadManager {
                 int attack = Integer.parseInt(pokemonData[2]);
                 int defense = Integer.parseInt(pokemonData[3]);
                 int speed = Integer.parseInt(pokemonData[4]);
-                Type type = Type.valueOf(pokemonData[5]);
+                String type = pokemonData[5];
                 int level = Integer.parseInt(pokemonData[6]);
-                Skill_Name skillName = Skill_Name.valueOf(pokemonData[7]);
+                String skillName = pokemonData[7];
 
                 Pokemon pokemon = new Pokemon();
-                pokemon.name = Pokemon_Name.valueOf(pokemonName);
+                pokemon.name = pokemonName;
                 pokemon.HP = hp;
                 pokemon.ATK = attack;
                 pokemon.DEF = defense;
