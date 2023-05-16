@@ -5,15 +5,17 @@ public class Pokemon extends UserData {
 	protected int ATK;
 	protected int DEF;
 	protected int SPD;
-	protected Type type;
+	protected String type;
 	protected int Lv;
 	protected Skill_Name skillname;
 	public int add = 0;
 	 
-	public void Pikachu(int add) {
-		this.name = Pokemon_Name.피카츄;
-		HPCalculrator(35,add);
-		ATKDEFSPDCalculrator(55, 40, 90, add);
+	public Pokemon() {
+		
+	}
+	public Pokemon(int add) {
+		this.add=add;
+		
 	}
 	
 	public void HPCalculrator(float hp,int add) {

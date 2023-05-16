@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class PokemonDex {
 	private static PokemonDex PDex[] = new PokemonDex[30];
@@ -7,33 +10,46 @@ public class PokemonDex {
 	private float baseStatus[]= new float[4];// 종족치,hp 공격 방어 스피드 순
 	private int Lv;
 	private int EveLv;
-	private SkillDex skillIndexNum[] = new SkillDex[4];
+	private String type;
+	private int[] skillIndexNum = {0,0,0,0};
 	
 	
 	private PokemonDex() {
-		//1번
-		for(int i = 0; i<20;i++) {
-			switch(i) {
-			case 0:
-				PDex[i].PokemonName = "나오하";
-				PDex[i].indexNum = 1;
-				PDex[i].place = "미정";// 차후 정함
-				PDex[i].baseStatus[0]= 40;// hp
-				PDex[i].baseStatus[1]= 61;//공격
-				PDex[i].baseStatus[2]= 54;//방어
-				PDex[i].baseStatus[3]= 65;//스피드
-				PDex[i].Lv =1;
-				PDex[i].EveLv =16;
-				//PDex[i].skillIndexNum[0].index= 1;
-				
-			}
-		}
+	
+		
 	}
-	public void getDex(int dex) {
-		switch(dex-1){
-		case 0:
-			
-		}
+	private PokemonDex(int indexNum, String place, String pokemonName, float[] baseStatus, int lv, int eveLv) {
+        this.indexNum = indexNum;
+        this.place = place;
+        this.PokemonName = pokemonName;
+        this.baseStatus = baseStatus;
+        this.Lv = lv;
+        this.EveLv = eveLv;
+    }
+	public static void getDex(int dex) {
+		 try {
+	            BufferedReader reader = new BufferedReader(new FileReader("PokemonInfo.csv"));
+	            String line;
+	            int i = 0;
+	            while ((line = reader.readLine()) != null && i < 20) {
+	                String[] values = line.split(",");
+	                int indexNum = Integer.parseInt(values[0]);
+	                String place = values[1];
+	                String pokemonName = values[2];
+	                float[] baseStatus = new float[4];
+	                for (int j = 0; j < 4; j++) {
+	                    baseStatus[j] = Float.parseFloat(values[3 + j]);
+	                }
+	                int lv = Integer.parseInt(values[7]);
+	                int eveLv = Integer.parseInt(values[8]);
+	                PDex[i] = new PokemonDex(indexNum, place, pokemonName, baseStatus, lv, eveLv);
+	                i++;
+	            }
+	            reader.close();
+	        } catch (IOException e) {
+	            System.out.println("Error reading file");
+	            e.printStackTrace();
+	        }
 	}
 	
 }
