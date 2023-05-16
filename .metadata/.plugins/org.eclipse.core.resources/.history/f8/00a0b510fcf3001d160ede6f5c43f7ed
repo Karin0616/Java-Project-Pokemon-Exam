@@ -1,6 +1,5 @@
 
 public class Pokemon extends UserData {
-	protected int index;
 	protected String name;
 	protected float HP;
 	protected float ATK;
@@ -16,7 +15,6 @@ public class Pokemon extends UserData {
 		
 	}
 	public Pokemon(int dex, int add) {
-		this.index=dex;
 		this.add=add;
 		this.name = pdex[dex].getNameA();
 		this.type= pdex[dex].getType();
