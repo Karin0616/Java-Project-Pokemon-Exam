@@ -9,7 +9,7 @@ public class UserData {
 		
 	}
 	public UserData(int boxCount,Pokemon gotPokemon[],int trainerLV,int[] Candy) {
-		this.boxCount=boxcount;
+		this.setBoxCount(boxCount);
 		this.gotPokemon=gotPokemon;
 		this.trainerLV=trainerLV;
 		this.Candy=Candy;
@@ -17,29 +17,36 @@ public class UserData {
 	public Pokemon[] getPokemon() {
 		return this.gotPokemon;
 	}
-	public int getTrainnerLv() {
+	public void setGotPokemon(Pokemon[] Poke) {
+		this.gotPokemon=Poke;
+	}
+	public int getTrainerLV() {
 		return this.trainerLV;
+	}
+	public void setTrainerLv(int add) {
+		this.trainerLV+=add;
 	}
 	
 	public int[] getEXPCandyCount() {
 		return this.Candy;
 	}
-	public void setNewPokemonBox(Pokemon poke) {
-		
+	public void setEXPCandyCount(int[] Candy) {
+		for(int i=0;i<Candy.length;i++) {
+			this.Candy[i]= Candy[i];
+		}
 	}
+	
 	public void changeBox(int first, int second) {
 		
 	}
-	public void setTrainnerLv(int add) {
-		this.trainerLV+=add;
-	}
 	
-	public void setEXPCandyCount(int Xs,int S,int M,int L,int XL) {
-		this.Candy[0]=Xs;
-		this.Candy[1]=S;
-		this.Candy[2]=M;
-		this.Candy[3]=L;
-		this.Candy[4]=XL;
+	
+	
+	public int getBoxCount() {
+		return boxCount;
+	}
+	public void setBoxCount(int boxCount) {
+		this.boxCount = boxCount;
 	}
 	
 	
