@@ -1,0 +1,16 @@
+
+public class Skill extends Pokemon{
+	protected float skill_Damage =0;
+	protected float skill_debuff=0;
+	
+	public static float dmgCal(SkillDex skill) {
+		
+		return this.skill_Damage;	
+	}
+	public static float debuffCal(SkillDex skill) {
+		
+		
+		return skill_debuff;	
+	}
+	
+}

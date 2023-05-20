@@ -1,0 +1,929 @@
+
+public class Skill extends Pokemon{
+	protected static float skill_Damage =0;
+	protected static float skill_debuff=0;
+	protected static float effect=1;
+	static SkillDex[] skill = SkillDex.getInstance();
+	
+	public static float dmgCal(Pokemon attacker,Pokemon defender,int skillIndex) {
+		float same=1;
+		
+		for(int i=0;i<skill.length;i++) {
+			if(skill[i].getIndexNum()==skillIndex) {
+				if(attacker.type == skill[i].getType()) {
+					same=1.5f;
+				}
+				Skill.effecter(skill[i].getType(),defender.type;
+				skill_Damage = (10*attacker.ATK/defender.DEF*effect)*same)+1f;
+			}
+		}
+		
+		return skill_Damage;	
+	}
+	public static float debuffCal(Pokemon p) {
+		
+		
+		return ;	
+	}
+	
+
+
+
+
+public static void effecter(String skillType,String enemyType) {
+	if(skillType.equals("노말")) {
+		switch(enemyType) {
+		case "노말":
+				
+				break;
+		case "격투":
+			
+			break;
+		case "비행":
+			break;
+		case "독":
+			break;
+		case "땅":
+			break;
+		case "바위":
+			this.effect=0.8f;
+			break;
+		case "벌레":
+			break;
+		case "고스트":
+			this.effect=0.8f;
+			break;
+		case "강철":
+			this.effect=0.8f;
+			break;
+		case "불꽃":
+			break;
+		case "물":
+			break;
+		case "풀":
+			break;
+		case "전기":
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			break;
+		case "악":
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("격투")) {
+		switch(enemyType) {
+		case "노말":
+			this.effect=1.25f;
+				break;
+		case "격투":
+			break;
+		case "비행":
+			this.effect=0.8f;
+			break;
+		case "독":
+			this.effect=0.8f;
+			break;
+		case "땅":
+			break;
+		case "바위":
+			this.effect=1.25f;
+			break;
+		case "벌레":
+			this.effect=0.8f;
+			break;
+		case "고스트":
+			this.effect=0.8f;
+			break;
+		case "강철":
+			this.effect=1.25f;
+			break;
+		case "불꽃":
+			break;
+		case "물":
+			break;
+		case "풀":
+			break;
+		case "전기":
+			break;
+		case "에스퍼":
+			this.effect=0.8f;
+			break;
+		case "얼음":
+			this.effect=1.25f;
+			break;
+		case "드래곤":
+			break;
+		case "악":
+			this.effect=1.25f;
+			break;
+		case "페어리":
+			this.effect=0.8f;
+			break;
+		}
+	}
+	if(skillType.equals("비행")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			this.effect=1.25f;
+			break;
+		case "비행":
+			break;
+		case "독":
+			break;
+		case "땅":
+			break;
+		case "바위":
+			this.effect=0.8f;
+			break;
+		case "벌레":
+			this.effect=1.25f;
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			this.effect=0.8f;
+			break;
+		case "불꽃":
+			break;
+		case "물":
+			break;
+		case "풀":
+			this.effect=1.25f;
+			break;
+		case "전기":
+			this.effect=0.8f;
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			break;
+		case "악":
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("독")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			
+			break;
+		case "비행":
+			break;
+		case "독":
+			this.effect=0.8f;
+			break;
+		case "땅":
+			this.effect=0.8f;
+			break;
+		case "바위":
+			this.effect=0.8f;
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			this.effect=0.8f;
+			break;
+		case "강철":
+			this.effect=0.8f;
+			break;
+		case "불꽃":
+			break;
+		case "물":
+			break;
+		case "풀":
+			this.effect=1.25f;
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			break;
+		case "악":
+			break;
+		case "페어리":
+			this.effect=1.25f;
+			break;
+		}
+	}
+	if(skillType.equals("땅")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			
+			break;
+		case "비행":
+			this.effect=0.8f;
+			break;
+		case "독":
+			this.effect=1.25f;
+			break;
+		case "땅":
+			break;
+		case "바위":
+			
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			this.effect=1.25f;
+			break;
+		case "불꽃":
+			this.effect=1.25f;
+			break;
+		case "물":
+			break;
+		case "풀":
+			this.effect=0.8f;
+			break;
+		case "전기":
+			this.effect=1.25f;
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			break;
+		case "악":
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("바위")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			this.effect=0.8f;
+			break;
+		case "비행":
+			this.effect=1.25f;
+			break;
+		case "독":
+			break;
+		case "땅":
+			this.effect=0.8f;
+			break;
+		case "바위":
+			
+			break;
+		case "벌레":
+			this.effect=1.25f;
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			this.effect=0.8f;
+			break;
+		case "불꽃":
+			this.effect=1.25f;
+			break;
+		case "물":
+			break;
+		case "풀":
+		
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			this.effect=1.25f;
+			break;
+		case "드래곤":
+			break;
+		case "악":
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("벌레")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			this.effect=0.8f;
+			break;
+		case "비행":
+			this.effect=0.8f;
+			break;
+		case "독":
+			this.effect=0.8f;
+			break;
+		case "땅":
+			break;
+		case "바위":
+			
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			this.effect=0.8f;
+			break;
+		case "강철":
+			this.effect=0.8f;
+			break;
+		case "불꽃":
+			this.effect=0.8f;
+			break;
+		case "물":
+			break;
+		case "풀":
+			this.effect=1.25f;
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			this.effect=1.25f;
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			break;
+		case "악":
+			this.effect=1.25f;
+			break;
+		case "페어리":
+			this.effect=0.8f;
+			break;
+		}
+	}
+	if(skillType.equals("고스트")) {
+		switch(enemyType) {
+		case "노말":
+			this.effect=0.8f;
+				break;
+		case "격투":
+			
+			break;
+		case "비행":
+			break;
+		case "독":
+			break;
+		case "땅":
+			break;
+		case "바위":
+			
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			this.effect=0.8f;
+			break;
+		case "강철":
+			
+			break;
+		case "불꽃":
+			break;
+		case "물":
+			break;
+		case "풀":
+		
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			this.effect=0.8f;
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			break;
+		case "악":
+			this.effect=0.8f;
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("강철")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			
+			break;
+		case "비행":
+			break;
+		case "독":
+			break;
+		case "땅":
+			break;
+		case "바위":
+			this.effect=1.25f;
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			this.effect=0.8f;
+			break;
+		case "불꽃":
+			this.effect=0.8f;
+			break;
+		case "물":
+			this.effect=0.8f;
+			break;
+		case "풀":
+		
+			break;
+		case "전기":
+			this.effect=0.8f;
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			this.effect=1.25f;
+			break;
+		case "드래곤":
+			break;
+		case "악":
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("불꽃")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			
+			break;
+		case "비행":
+			break;
+		case "독":
+			break;
+		case "땅":
+			break;
+		case "바위":
+			this.effect=0.8f;
+			break;
+		case "벌레":
+			this.effect=1.25f;
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			this.effect=1.25f;
+			break;
+		case "불꽃":
+			this.effect=0.8f;
+			break;
+		case "물":
+			this.effect=0.8f;
+			break;
+		case "풀":
+			this.effect=1.25f;
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			this.effect=1.25f;
+			break;
+		case "드래곤":
+			this.effect=0.8f;
+			break;
+		case "악":
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("물")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			
+			break;
+		case "비행":
+			break;
+		case "독":
+			break;
+		case "땅":
+			this.effect=1.25f;
+			break;
+		case "바위":
+			this.effect=1.25f;
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			
+			break;
+		case "불꽃":
+			this.effect=1.25f;
+			break;
+		case "물":
+			this.effect=0.8f;
+			break;
+		case "풀":
+			this.effect=0.8f;
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			this.effect=0.8f;
+			break;
+		case "악":
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("풀")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			
+			break;
+		case "비행":
+			this.effect=0.8f;
+			break;
+		case "독":
+			this.effect=0.8f;
+			break;
+		case "땅":
+			this.effect=1.25f;
+			break;
+		case "바위":
+			this.effect=1.25f;
+			break;
+		case "벌레":
+			this.effect=0.8f;
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			this.effect=0.8f;
+			break;
+		case "불꽃":
+			this.effect=0.8f;
+			break;
+		case "물":
+			this.effect=1.25f;
+			break;
+		case "풀":
+			this.effect=0.8f;
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			this.effect=0.8f;
+			break;
+		case "악":
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("전기")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			
+			break;
+		case "비행":
+			this.effect=1.25f;
+			break;
+		case "독":
+			break;
+		case "땅":
+			this.effect=0.8f;
+			break;
+		case "바위":
+			
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			
+			break;
+		case "불꽃":
+			break;
+		case "물":
+			this.effect=1.25f;
+			break;
+		case "풀":
+			this.effect=0.8f;
+			break;
+		case "전기":
+			this.effect=0.8f;
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			this.effect=0.8f;
+			break;
+		case "악":
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("에스퍼")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			this.effect=1.25f;
+			break;
+		case "비행":
+			break;
+		case "독":
+			this.effect=1.25f;
+			break;
+		case "땅":
+			break;
+		case "바위":
+			
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			this.effect=0.8f;
+			break;
+		case "불꽃":
+			break;
+		case "물":
+			break;
+		case "풀":
+		
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			this.effect=0.8f;
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			break;
+		case "악":
+			this.effect=0.8f;
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("얼음")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			
+			break;
+		case "비행":
+			this.effect=1.25f;
+			break;
+		case "독":
+			break;
+		case "땅":
+			this.effect=1.25f;
+			break;
+		case "바위":
+			
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			this.effect=0.8f;
+			break;
+		case "불꽃":
+			this.effect=0.8f;
+			break;
+		case "물":
+			this.effect=0.8f;
+			break;
+		case "풀":
+			this.effect=1.25f;
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			this.effect=0.8f;
+			break;
+		case "드래곤":
+			this.effect=1.25f;
+			break;
+		case "악":
+			break;
+		case "페어리":
+			break;
+		}
+	}
+	if(skillType.equals("드래곤")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			
+			break;
+		case "비행":
+			break;
+		case "독":
+			break;
+		case "땅":
+			break;
+		case "바위":
+			
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			this.effect=0.8f;
+			break;
+		case "불꽃":
+			break;
+		case "물":
+			break;
+		case "풀":
+		
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			this.effect=1.25f;
+			break;
+		case "악":
+			break;
+		case "페어리":
+			this.effect=0.8f;
+			break;
+		}
+	}
+	if(skillType.equals("악")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			this.effect=0.8f;
+			break;
+		case "비행":
+			break;
+		case "독":
+			break;
+		case "땅":
+			break;
+		case "바위":
+			
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			this.effect=1.25f;
+			break;
+		case "강철":
+			
+			break;
+		case "불꽃":
+			break;
+		case "물":
+			break;
+		case "풀":
+		
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			this.effect=1.25f;
+			break;
+		case "얼음":
+			break;
+		case "드래곤":
+			break;
+		case "악":
+			this.effect=0.8f;
+			break;
+		case "페어리":
+			this.effect=0.8f;
+			break;
+		}
+	}
+	if(skillType.equals("페어리")) {
+		switch(enemyType) {
+		case "노말":
+				break;
+		case "격투":
+			this.effect=1.25f;
+			break;
+		case "비행":
+			break;
+		case "독":
+			this.effect=0.8f;
+			break;
+		case "땅":
+			break;
+		case "바위":
+			
+			break;
+		case "벌레":
+			
+			break;
+		case "고스트":
+			break;
+		case "강철":
+			this.effect=0.8f;
+			break;
+		case "불꽃":
+			this.effect=0.8f;
+			break;
+		case "물":
+			break;
+		case "풀":
+		
+			break;
+		case "전기":
+		
+			break;
+		case "에스퍼":
+			break;
+		case "얼음":
+			this.effect=1.25f;
+			break;
+		case "드래곤":
+			this.effect=1.25f;
+			break;
+		case "악":
+			break;
+		case "페어리":
+			break;
+		}
+	}
+}
+}
