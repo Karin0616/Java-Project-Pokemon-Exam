@@ -62,10 +62,8 @@ public class Game_Display {
 					BattleMode();
 					break;
 				case 2://포획모드
-					GotchaMode();
 					break;
 				case 3://포켓몬박스
-					
 					break;
 				case 4://저장
 					SaveLoadManager.saveData(Pokemon_Main.user);
@@ -88,11 +86,6 @@ public class Game_Display {
 		System.out.println("도전하실 층을 입력해주세요(현재 최고층"+BattleTower.recordTowerLevel+"층)");
 		System.out.print("도전을 취소하시고 싶으시다면 0을 눌러주세요 : ");
 		BattleTower.BattleTowerScene();
-		
-	}
-	public static void GotchaMode() {
-		//포획모드
-		//System.out.println("포획모드");
 		
 	}
 }
