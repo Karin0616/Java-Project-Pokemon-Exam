@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+public class Gatcha {
+	public static String place="입구";
+	Pokemon p;
+	private static int randomAdd;
+	static PokemonDex pdex[] = PokemonDex.getInstance();
+	public Gatcha() {
+		
+	}
+	
+	public static void gatchamode() {
+		//포획모드 상황출력
+		printer(1);
+		int selecter= Game_Display.GameScan.nextInt();
+		switch(selecter) {
+		case 0:
+			Game_Display.MainScreen();
+			break;
+		default:
+			map(selecter);
+			
+		}
+		
+	}
+	public static void printer(int num) {
+		switch (num) {
+		case 1:
+			System.out.println("포획모드");
+			System.out.println("현재 위치"+place);
+			System.out.println("현재 포켓몬 소유갯수"+Pokemon_Main.user.getBoxCount()+"/20");
+			System.out.println("탐색할 에리어를 선택하세요.");
+			System.out.println("1.초원 2.바다 3.화산 4.바위산 5.호수 6. 사막 7. 동굴 0. 돌아가기");
+			break;
+		case 2:
+		case 11:
+			System.out.println("현재 위치"+place);
+			System.out.println("어디를 조사할까요?");
+			System.out.println("1. 나무위를 조사한다");
+			System.out.println("2. 수풀을 헤집는다");
+			
+			
+			
+		}
+		
+	}
+	public static void map(int num) {
+		switch(num) {
+		case 1:
+			place="초원";
+			printer(11);
+			int selecter= Game_Display.GameScan.nextInt();
+			
+		}
+	}
+
+	public static void setRandomAdd() {
+		randomAdd = (int)(Math.random()*10);
+	}
+	public static int pokemonIndexGenerator() {
+		int tmpPindex;
+		while(true) {
+			tmpPindex=(int)(Math.random()*50);
+			if(equalss(tmpPindex)) {
+				
+			}
+		}
+		
+	}
+	public boolean equalss(int tmpPindex) {
+		if(pdex[tmpPindex].getPlace().equals(place)) {
+			return true;
+		}else return false;
+		
+		
+		
+	}
+}

@@ -1,6 +1,6 @@
 
 public class UserData {
-	private int boxCount;
+	private int boxCount=0;
 	private Pokemon gotPokemon[];
 	private int trainerLV;
 	private int Candy[]=new int[5];

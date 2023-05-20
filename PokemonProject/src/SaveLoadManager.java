@@ -22,6 +22,8 @@ public class SaveLoadManager {
                 writer.newLine();
                 writer.write(pokemon.add);
                 writer.newLine();
+                writer.write(pokemon.Lv);
+                writer.newLine();
               }
 
             System.out.println("Data saved successfully!");
@@ -50,11 +52,11 @@ public class SaveLoadManager {
             while ((line = reader.readLine()) != null && index < 5) {
                 String[] pokemonData = line.split(",");
                 // Parse the pokemon data and create a new Pokemon object
-                // Assuming the CSV format is: name,HP,ATK,DEF,SPD,type,Lv,skillname
+                // Assuming the CSV format is: 
                 int dex = Integer.parseInt(pokemonData[0]);
                 int add = Integer.parseInt(pokemonData[1]);
-
-                Pokemon pokemon = new Pokemon(dex,add);
+                int Lv = Integer.parseInt(pokemonData[2]);
+                Pokemon pokemon = new Pokemon(dex,add,Lv);
                 
 
                 gotPokemon[dex++] = pokemon;
