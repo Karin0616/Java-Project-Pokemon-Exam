@@ -128,9 +128,7 @@ public class PokemonBox {
 					ch=false;
 					break;
 				case 9:
-					Game_Display.pokemonBox();
-					ch=false;
-					break;
+					
 			}
 
 		}//while
