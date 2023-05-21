@@ -9,6 +9,9 @@ public class Game_Display {
 	}
 	
 	public static void StartScreen() {
+		/*
+		 * 텍스트 ui
+		 */
 		//타이틀화면
 		System.out.println("포켓몬스터");
 		System.out.println("\n");
@@ -46,6 +49,9 @@ public class Game_Display {
 	}
 	public static void MainScreen() {
 		//메인화면
+		/*
+		 * 텍스트 ui
+		 */
 		System.out.println("====================");
 		System.out.println("포켓몬스터");
 		System.out.println("\n");

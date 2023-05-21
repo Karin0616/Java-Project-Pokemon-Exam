@@ -101,6 +101,9 @@ public class PokemonBox {
 	}//포켓몬 체커 끝
 	
 	public static void useCandy() {
+		/*
+		 * 텍스트 ui 
+		 */
 		System.out.println("어떤 사탕을 쓰실 건가요?");
 		int candy[]= Pokemon_Main.user.getEXPCandyCount();
 		System.out.println("현재 소지 경험사탕: Xs "+candy[0]+"S "+candy[1]+"M "+candy[2]+"L "+candy[3]+"XL "+candy[4]);

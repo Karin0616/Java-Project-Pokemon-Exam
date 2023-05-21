@@ -44,6 +44,9 @@ public class Gatcha {
 		
 	}
 	public static void printer(int num) {
+		/*
+		 * 텍스트ui부분
+		 */
 		switch (num) {
 		case 1:
 			System.out.println("포획모드");
@@ -90,7 +93,11 @@ public class Gatcha {
 	}
 	public static void map(int num) {
 		//여기서 이것저것 다함
-		
+		/*
+		 * 여기서 printer()부분이 이제 실행되는 것이니까 잘 찾아넣고
+		 * 예외처리 trycatch에 catch부분 프린트도 알아서 잘 바꿔도됨.
+		 * 
+		 */
 		//help
 		switch(num) {
 		case 1:
@@ -154,14 +161,14 @@ public class Gatcha {
 	}
 	public static void setLv(int tmpPindex) {
 		int Tlv = Pokemon_Main.user.getTrainerLV();
-		System.out.println("트레이너레벨"+Tlv);//임시
+		//System.out.println("트레이너레벨"+Tlv);//임시
 		if(Tlv<10) {
 			randLv=random.nextInt(1,Tlv);
-			System.out.println("야생"+randLv);//임시
+			//System.out.println("야생"+randLv);//임시
 		}else if(Tlv<20) {
 			//최소값 설정
 			randLv=random.nextInt(7,Tlv);
-			System.out.println("야생"+randLv);//임시
+			//System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
@@ -170,7 +177,7 @@ public class Gatcha {
 		}else if(Tlv<30) {
 			//최소값 설정
 			randLv=random.nextInt(16, Tlv);
-			System.out.println("야생"+randLv);//임시
+			//System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
@@ -179,7 +186,7 @@ public class Gatcha {
 		}else if(Tlv<40) {
 			//최소값 설정
 			randLv=random.nextInt(27, Tlv);
-			System.out.println("야생"+randLv);//임시
+		//	System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
@@ -188,7 +195,7 @@ public class Gatcha {
 		}else if(Tlv<50) {
 			//최소값 설정
 			randLv=random.nextInt(35, Tlv);
-			System.out.println("야생"+randLv);//임시
+			//System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
@@ -197,7 +204,7 @@ public class Gatcha {
 		}else if(Tlv<60) {
 			//최소값 설정
 			randLv=random.nextInt(45, Tlv);
-			System.out.println("야생"+randLv);//임시
+		//	System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
@@ -206,7 +213,7 @@ public class Gatcha {
 		}else if(Tlv<101) {
 			//최소값 설정
 			randLv=random.nextInt(55, Tlv);
-			System.out.println("야생"+randLv);//임시
+		//	System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
