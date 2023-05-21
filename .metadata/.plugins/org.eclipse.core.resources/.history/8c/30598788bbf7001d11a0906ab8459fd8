@@ -25,15 +25,8 @@ public class UserData {
 	public Pokemon[] getPokemon() {
 		return this.gotPokemon;
 	}
-	public Pokemon getPokemonEach(int num) {
-		return this.gotPokemon[num];
-	}
 	public void setGotPokemon(Pokemon[] Poke) {
 		this.gotPokemon=Poke;
-		//System.out.println(gotPokemon[boxCount-1].name);
-	}
-	public void setPokemonReplace(int index,Pokemon P) {
-		this.gotPokemon[index]=P;
 		//System.out.println(gotPokemon[boxCount-1].name);
 	}
 	public int getTrainerLV() {

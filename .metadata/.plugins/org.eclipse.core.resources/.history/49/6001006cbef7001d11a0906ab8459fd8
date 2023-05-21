@@ -17,7 +17,7 @@ public class Gatcha {
 		if(Pokemon_Main.user.getBoxCount()==20) {
 			printer(98);
 		}
-		int selecter=0;
+		int selecter;
 		while(true) {
 			try {
 				selecter= Game_Display.GameScan.nextInt();
@@ -96,7 +96,7 @@ public class Gatcha {
 		case 1:
 			place="미정"; //테스트용으로 일단 미정으로 바꿈 원래 초원임
 			printer(11);
-			int selecter=0;
+			int selecter;
 			while(true) {
 				try {
 					selecter= Game_Display.GameScan.nextInt();

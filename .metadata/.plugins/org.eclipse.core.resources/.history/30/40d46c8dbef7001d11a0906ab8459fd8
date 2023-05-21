@@ -16,12 +16,7 @@ public class Game_Display {
 		System.out.println("2.불러오기");
 		System.out.println("3.끝내기");
 		while(true) {
-			try {
-				num= Game_Display.GameScan.nextInt();
-			}catch(NumberFormatException e) {
-				System.out.println("정수를 입력해주세요.");
-			}
-			
+			num = GameScan.nextInt();
 			if(num>0&&num<4) {
 				switch(num) {
 				case 1://처음부터
@@ -55,11 +50,7 @@ public class Game_Display {
 		System.out.println("4.저장한다");
 		System.out.println("5.타이틀로");
 		while(true) {
-			try {
-				num= Game_Display.GameScan.nextInt();
-			}catch(NumberFormatException e) {
-				System.out.println("정수를 입력해주세요.");
-			}
+			num = GameScan.nextInt();
 			if(num>0&&num<6) {
 				switch(num) {
 				case 1://대전모드

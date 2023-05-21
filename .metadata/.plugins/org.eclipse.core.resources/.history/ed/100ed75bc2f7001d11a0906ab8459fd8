@@ -55,8 +55,12 @@ public class Pokemon  {
 		this.SPD=((2*spd)+add)*this.Lv/100;
 		
 	}
-	public void lvCalculrator(int num) {
-			switch(num) {
+	public void lvCalculrator(int[] Candy) {
+		for(int i=0;i<5;i++) {
+			if(Candy[i]==0) {
+				continue;
+			}else {
+				switch(i) {
 				case 0:
 					this.exp+=100;
 				case 1:
@@ -69,6 +73,8 @@ public class Pokemon  {
 					this.exp+=500;
 				}
 				
+			}
+		}
 		if(exp>=100&&this.Lv<10) {
 			this.Lv+=exp/100;
 		}else if (exp>=250&&this.Lv<20) {

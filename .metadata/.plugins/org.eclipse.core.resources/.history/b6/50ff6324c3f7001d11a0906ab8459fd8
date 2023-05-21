@@ -13,7 +13,6 @@
 public class PokemonBox {
 	static Pokemon p=null;
 	public static int selecter=0;
-	public static int index=0;
 	public static void pokemonBoxScene() {
 		/* 텍스트UI부분
 		 * candy[]는 0번부터 4번까지 총5개, xs s m L XL 순
@@ -65,7 +64,6 @@ public class PokemonBox {
 			}
 			
 		}
-		index=selecter;//포켓몬 인덱스값 저장
 		p = Pokemon_Main.user.getPokemonEach(selecter-1);//이거는 잘 활용해보는게 편함
 		System.out.println((selecter)+p.name+" 레벨 : "+"체력: "+p.HP+p.Lv+"공격력 : "+p.ATK+"방어력: "+p.DEF+"스피드: "+p.SPD+"타입"+p.type);
 		System.out.println("무엇을 하시겠습니까?");
@@ -112,9 +110,10 @@ public class PokemonBox {
 			}catch (NumberFormatException e) {
 				System.out.println("다시 입력해주세요.");
 			}
-			p.lvCalculrator(0);
-			Pokemon_Main.user.setPokemonReplace(index, p);
-			
+			switch(selecter) {
+			case 0:
+				
+			}
 			
 		}
 	}

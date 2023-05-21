@@ -65,7 +65,7 @@ public class PokemonBox {
 			}
 			
 		}
-		index=selecter;//포켓몬 인덱스값 저장
+		index=selecter;
 		p = Pokemon_Main.user.getPokemonEach(selecter-1);//이거는 잘 활용해보는게 편함
 		System.out.println((selecter)+p.name+" 레벨 : "+"체력: "+p.HP+p.Lv+"공격력 : "+p.ATK+"방어력: "+p.DEF+"스피드: "+p.SPD+"타입"+p.type);
 		System.out.println("무엇을 하시겠습니까?");
@@ -113,7 +113,7 @@ public class PokemonBox {
 				System.out.println("다시 입력해주세요.");
 			}
 			p.lvCalculrator(0);
-			Pokemon_Main.user.setPokemonReplace(index, p);
+			Pokemon_Main.user.setPokemonReplace(selecter, p);
 			
 			
 		}

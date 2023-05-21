@@ -113,7 +113,7 @@ public class PokemonBox {
 				System.out.println("다시 입력해주세요.");
 			}
 			p.lvCalculrator(0);
-			Pokemon_Main.user.setPokemonReplace(index, p);
+			Pokemon_Main.user.setPokemonReplace(selecter, p);
 			
 			
 		}
