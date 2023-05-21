@@ -27,12 +27,16 @@ public class UserData {
 	}
 	public void setGotPokemon(Pokemon[] Poke) {
 		this.gotPokemon=Poke;
+		//System.out.println(gotPokemon[boxCount-1].name);
 	}
 	public int getTrainerLV() {
 		return this.trainerLV;
 	}
-	public void setTrainerLv(int add) {
+	public void setTrainerLvUP(int add) {
 		this.trainerLV+=add;
+	}
+	public void setTrainerLv(int add) {
+		this.trainerLV=add;
 	}
 	
 	public int[] getEXPCandyCount() {
