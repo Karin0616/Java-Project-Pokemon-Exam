@@ -1,6 +1,6 @@
 
 public class Pokemon extends UserData {
-	protected int index;
+	protected int index=0;
 	protected String name;
 	protected float HP;
 	protected float ATK;
@@ -22,6 +22,17 @@ public class Pokemon extends UserData {
 		this.name = pdex[dex].getNameA();
 		this.type= pdex[dex].getType();
 		this.Lv = pdex[dex].getLv();
+		this.eveLv = pdex[dex].getEveLv();
+		this.skillIndexNum=pdex[dex].getSkillIndexNum();
+		HPCalculrator(pdex[dex].getBaseStatus(0),add);
+		ATKDEFSPDCalculrator(pdex[dex].getBaseStatus(1),pdex[dex].getBaseStatus(2),pdex[dex].getBaseStatus(3),add);
+	}
+	public Pokemon(int dex, int add,int Lv) {
+		this.index=dex;
+		this.add=add;
+		this.name = pdex[dex].getNameA();
+		this.type= pdex[dex].getType();
+		this.Lv = pdex[dex].getLv()+Lv;
 		this.eveLv = pdex[dex].getEveLv();
 		this.skillIndexNum=pdex[dex].getSkillIndexNum();
 		HPCalculrator(pdex[dex].getBaseStatus(0),add);
