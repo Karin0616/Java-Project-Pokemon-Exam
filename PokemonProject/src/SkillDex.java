@@ -33,7 +33,7 @@ public class SkillDex {
             BufferedReader reader = new BufferedReader(new FileReader("skillInfo.csv"));
             String line;
             int i = 0;
-            while ((line = reader.readLine()) != null && i < 9) {//스킬총수
+            while ((line = reader.readLine()) != null && i < 217) {//스킬총수
                 String[] values = line.split(",");
                 int indexNum = Integer.parseInt(values[0]);
                 String name= values[1];

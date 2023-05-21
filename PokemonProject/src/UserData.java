@@ -1,8 +1,8 @@
 
 public class UserData {
 	private int boxCount=0;
-	private Pokemon gotPokemon[];
-	private int trainerLV;
+	private Pokemon gotPokemon[]= new Pokemon[20];
+	private int trainerLV=50; //테스트때문에 바꿈 디폴트값 1
 	private int Candy[]=new int[5];
 	
 	public UserData() {
@@ -13,6 +13,14 @@ public class UserData {
 		this.gotPokemon=gotPokemon;
 		this.trainerLV=trainerLV;
 		this.Candy=Candy;
+	}
+	public void setupStart() {
+		this.gotPokemon[0] =  new Pokemon(1,5,5);
+		this.boxCount =1;
+		this.trainerLV=50;//임시
+		for(int i : Candy) {
+			i=0;
+		}
 	}
 	public Pokemon[] getPokemon() {
 		return this.gotPokemon;

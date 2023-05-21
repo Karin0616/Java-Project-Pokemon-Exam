@@ -1,5 +1,5 @@
 
-public class Pokemon extends UserData {
+public class Pokemon  {
 	protected int index=0;
 	protected String name;
 	protected float HP;
@@ -18,12 +18,19 @@ public class Pokemon extends UserData {
 	}
 	public Pokemon(int dex, int add) {
 		this.index=dex;
+		//System.out.println(this.index+"인덱스");
 		this.add=add;
+		//System.out.println(this.add+"add");
 		this.name = pdex[dex].getNameA();
+		//System.out.println(this.name);
 		this.type= pdex[dex].getType();
+		//System.out.println(this.type);
 		this.Lv = pdex[dex].getLv();
+		//System.out.println(this.Lv+"레벨");
 		this.eveLv = pdex[dex].getEveLv();
+		//System.out.println(this.eveLv+"진화레벨");
 		this.skillIndexNum=pdex[dex].getSkillIndexNum();
+		//System.out.println(this.skillIndexNum[0]);
 		HPCalculrator(pdex[dex].getBaseStatus(0),add);
 		ATKDEFSPDCalculrator(pdex[dex].getBaseStatus(1),pdex[dex].getBaseStatus(2),pdex[dex].getBaseStatus(3),add);
 	}
@@ -32,7 +39,7 @@ public class Pokemon extends UserData {
 		this.add=add;
 		this.name = pdex[dex].getNameA();
 		this.type= pdex[dex].getType();
-		this.Lv = pdex[dex].getLv()+Lv;
+		this.Lv = Lv;
 		this.eveLv = pdex[dex].getEveLv();
 		this.skillIndexNum=pdex[dex].getSkillIndexNum();
 		HPCalculrator(pdex[dex].getBaseStatus(0),add);

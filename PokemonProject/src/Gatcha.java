@@ -52,7 +52,7 @@ public class Gatcha {
 			System.out.println("무엇을 할까?");
 			System.out.println("1. 잡는다 2. 도망간다");
 			break;
-		case 13:
+		case 97:
 			System.out.println(p.name+p.Lv+"을 잡았다!");
 			System.out.println("메인으로 돌아갑니다.");
 			Game_Display.MainScreen();
@@ -79,10 +79,12 @@ public class Gatcha {
 		//help
 		switch(num) {
 		case 1:
-			place="초원";
+			place="미정"; //테스트용으로 일단 미정으로 바꿈 원래 초원임
 			printer(11);
 			int selecter= Game_Display.GameScan.nextInt();
+			//System.out.println("prograss1");
 			pokemonGenerator();
+			//System.out.println("prograss2");
 			printer(12);
 			selecter= Game_Display.GameScan.nextInt();
 			if(selecter==1) {
@@ -94,6 +96,7 @@ public class Gatcha {
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경					
 				Pokemon_Main.user.setGotPokemon(tmP);
+				printer(97);
 				
 			}else if(selecter==2) {
 				printer(99);
@@ -107,51 +110,60 @@ public class Gatcha {
 		randomAdd = (int)(Math.random()*10);
 	}
 	public static void setLv(int tmpPindex) {
-		if(Pokemon_Main.user.getTrainerLV()<10) {
-			randLv=random.nextInt(1,Pokemon_Main.user.getTrainerLV() );
-		}else if(Pokemon_Main.user.getTrainerLV()<20) {
+		int Tlv = Pokemon_Main.user.getTrainerLV();
+		System.out.println("트레이너레벨"+Tlv);//임시
+		if(Tlv<10) {
+			randLv=random.nextInt(1,Tlv);
+			System.out.println("야생"+randLv);//임시
+		}else if(Tlv<20) {
 			//최소값 설정
-			randLv=random.nextInt(10, Pokemon_Main.user.getTrainerLV());
+			randLv=random.nextInt(7,Tlv);
+			System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
 			}
 			
-		}else if(Pokemon_Main.user.getTrainerLV()<30) {
+		}else if(Tlv<30) {
 			//최소값 설정
-			randLv=random.nextInt(20, Pokemon_Main.user.getTrainerLV());
+			randLv=random.nextInt(16, Tlv);
+			System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
 			}
 			
-		}else if(Pokemon_Main.user.getTrainerLV()<40) {
+		}else if(Tlv<40) {
 			//최소값 설정
-			randLv=random.nextInt(30, Pokemon_Main.user.getTrainerLV());
+			randLv=random.nextInt(27, Tlv);
+			System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
 			}
 			
-		}else if(Pokemon_Main.user.getTrainerLV()<50) {
+		}else if(Tlv<50) {
 			//최소값 설정
-			randLv=random.nextInt(40, Pokemon_Main.user.getTrainerLV());
+			randLv=random.nextInt(35, Tlv);
+			System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
 			}
 			
-		}else if(Pokemon_Main.user.getTrainerLV()<60) {
+		}else if(Tlv<60) {
 			//최소값 설정
-			randLv=random.nextInt(50, Pokemon_Main.user.getTrainerLV());
+			randLv=random.nextInt(45, Tlv);
+			System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
 			}
 			
-		}else if(Pokemon_Main.user.getTrainerLV()<101) {
+		}else if(Tlv<101) {
 			//최소값 설정
-			randLv=random.nextInt(60, Pokemon_Main.user.getTrainerLV());
+			randLv=random.nextInt(55, Tlv);
+			System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
@@ -160,16 +172,23 @@ public class Gatcha {
 		
 	}
 	public static void pokemonGenerator() {
+		//System.out.println("prograss3");
 		int tmpPindex;
 		while(true) {
-			tmpPindex=(int)(Math.random()*50);
+			//System.out.println("prograss5");
+			tmpPindex=random.nextInt(1,54);
+			//System.out.println(tmpPindex);
+			//Game_Display.GameScan.next();
 			if(pdex[tmpPindex].getPlace().equals(place)&&pdex[tmpPindex].getLv()<=Pokemon_Main.user.getTrainerLV()) {
 				break;
 			}
+			//Game_Display.GameScan.next();
+			//System.out.println("prograss6");
 		}
 		setRandomAdd();
 		setLv(tmpPindex);
 		p=new Pokemon(tmpPindex,randomAdd,randLv);
+		//System.out.println("prograss4");
 		
 	}
 	

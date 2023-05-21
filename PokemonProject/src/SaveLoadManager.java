@@ -46,10 +46,10 @@ public class SaveLoadManager {
             userdata.setTrainerLv(trainerLV);
             userdata.setEXPCandyCount(candies);
 
-            Pokemon[] gotPokemon = new Pokemon[5];
+            Pokemon[] gotPokemon = new Pokemon[20];
             String line;
             int index = 0;
-            while ((line = reader.readLine()) != null && index < 5) {
+            while ((line = reader.readLine()) != null && index < 20) {
                 String[] pokemonData = line.split(",");
                 // Parse the pokemon data and create a new Pokemon object
                 // Assuming the CSV format is: 
