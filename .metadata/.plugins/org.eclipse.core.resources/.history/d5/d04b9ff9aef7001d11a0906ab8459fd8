@@ -65,7 +65,7 @@ public class Game_Display {
 					GotchaMode();
 					break;
 				case 3://포켓몬박스
-					pokemonBox();
+					
 					break;
 				case 4://저장
 					SaveLoadManager.saveData(Pokemon_Main.user);
@@ -95,10 +95,4 @@ public class Game_Display {
 		//System.out.println("포획모드");
 		Gatcha.gatchamode();
 	}
-	public static void pokemonBox() {
-		//포켓몬 박스확인
-		PokemonBox.pokemonBoxScene();
-	}
-	
-	
 }

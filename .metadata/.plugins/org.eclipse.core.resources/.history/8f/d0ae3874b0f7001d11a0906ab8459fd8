@@ -98,23 +98,5 @@ public class Pokemon  {
 				this.Lv+=exp/1500;
 			}
 		}
-		//진화 관련 트리거
-		if(this.Lv>=this.eveLv&&this.pdex[this.index+1].getLv()==this.eveLv) {
-			evolve();
-		}
-		
-	}
-	public void evolve() {
-	//진화메소드	
-	
-		this.index+=1;
-		this.name = pdex[this.index].getNameA();
-		this.type= pdex[this.index].getType();
-		this.eveLv = pdex[this.index].getEveLv();
-		this.skillIndexNum=pdex[this.index].getSkillIndexNum();
-		HPCalculrator(pdex[this.index].getBaseStatus(0),add);
-		ATKDEFSPDCalculrator(pdex[this.index].getBaseStatus(1),pdex[this.index].getBaseStatus(2),pdex[this.index].getBaseStatus(3),add);
-	
-		
 	}
 }

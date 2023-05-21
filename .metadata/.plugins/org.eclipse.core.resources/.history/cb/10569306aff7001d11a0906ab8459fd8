@@ -65,7 +65,7 @@ public class Game_Display {
 					GotchaMode();
 					break;
 				case 3://포켓몬박스
-					pokemonBox();
+					
 					break;
 				case 4://저장
 					SaveLoadManager.saveData(Pokemon_Main.user);

@@ -105,8 +105,6 @@ public class Pokemon  {
 		
 	}
 	public void evolve() {
-	//진화메소드	
-	
 		this.index+=1;
 		this.name = pdex[this.index].getNameA();
 		this.type= pdex[this.index].getType();
