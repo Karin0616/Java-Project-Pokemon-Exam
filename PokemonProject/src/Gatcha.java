@@ -49,16 +49,36 @@ public class Gatcha {
 		 */
 		switch (num) {
 		case 1:
-			System.out.println("포획모드");
-			System.out.println("현재 위치"+place);
-			System.out.println("현재 포켓몬 소유갯수"+Pokemon_Main.user.getBoxCount()+"/20");
-			System.out.println("탐색할 에리어를 선택하세요.");
-			System.out.println("1.초원 2.바다 3.화산 4.바위산 5.호수 6. 사막 7. 동굴 0. 돌아가기");//help
+			System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
+			System.out.println("　　　　　　　　　　　포　획　모　드　　　　　　　　　　　");
+			System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println("> 현재 위치 : "+place);
+			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
+			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
+			System.out.println("> 탐색할 에리어를 선택하세요.");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println("○―――――――○　○―――――――○　○―――――――○");
+			System.out.println("｜１：　초　원　｜　｜２：　바　다　｜　｜３：　화　산　｜");
+			System.out.println("○―――――――○　○―――――――○　○―――――――○");
+			System.out.println("○―――――――○　○―――――――○　○―――――――○");
+			System.out.println("｜４：　바위산　｜　｜５：　　숲　　｜　｜６：　사　막　｜");
+			System.out.println("○―――――――○　○―――――――○　○―――――――○");
+			System.out.println("○―――――――○　○―――――――○　○―――――――○");
+			System.out.println("｜７：　동　굴　｜　｜８：　설　산　｜　｜０：　돌아가기｜");
+			System.out.println("○―――――――○　○―――――――○　○―――――――○");
 			break;
 		case 2:
 		case 11:
-			System.out.println("현재 위치"+place);
-			System.out.println("어디를 조사할까요?");
+			System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
+			System.out.println("　　　　　　　　　　　포　획　모　드　　　　　　　　　　　");
+			System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println("> 현재 위치 : "+place);
+			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
+			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
+			System.out.println("> 어디를 조사할까요?");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("1. 나무위를 조사한다");
 			System.out.println("2. 수풀을 헤집는다");
 			break;
@@ -101,7 +121,7 @@ public class Gatcha {
 		//help
 		switch(num) {
 		case 1:
-			place="미정"; //테스트용으로 일단 미정으로 바꿈 원래 초원임
+			place="초원"; //테스트용으로 일단 미정으로 바꿈 원래 초원임
 			printer(11);
 			int selecter=0;
 			while(true) {

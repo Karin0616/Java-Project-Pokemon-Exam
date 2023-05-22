@@ -13,11 +13,15 @@ public class Game_Display {
 		 * 텍스트 ui
 		 */
 		//타이틀화면
-		System.out.println("포켓몬스터");
-		System.out.println("\n");
-		System.out.println("1.처음부터");
-		System.out.println("2.불러오기");
-		System.out.println("3.끝내기");
+		System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
+		System.out.println("　　　　　　　　　　　Ｐｏｋｅｍｏｎ　　　　　　　　　　　");
+		System.out.println("　　　　　　　　　　　　포켓몬스터　　　　　　　　　　　　");
+		System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
+		System.out.println("　　　　　　　　　　　             ◈――――――――◈");
+		System.out.println("　　　　　　　　　　　             ｜［１］　처음부터｜");
+		System.out.println("　　　　　　　　　　　             ｜［２］　불러오기｜");
+		System.out.println("　　　　　　　　　　　             ｜［３］　　끝내기｜");
+		System.out.println("　　　　　　　　　　　             ◈――――――――◈");
 		while(true) {
 			try {
 				num= Game_Display.GameScan.nextInt();
@@ -52,14 +56,19 @@ public class Game_Display {
 		/*
 		 * 텍스트 ui
 		 */
-		System.out.println("====================");
-		System.out.println("포켓몬스터");
-		System.out.println("\n");
-		System.out.println("1.대전모드");
-		System.out.println("2.포획모드");
-		System.out.println("3.포켓몬박스");
-		System.out.println("4.저장한다");
-		System.out.println("5.타이틀로");
+		System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
+		System.out.println("　　　　　　　　　　　Ｐｏｋｅｍｏｎ　　　　　　　　　　　");
+		System.out.println("　　　　　　　　　　　　포켓몬스터　　　　　　　　　　　　");
+		System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
+		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+		System.out.println(" ");
+		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+		System.out.println("○―――――――○　○―――――――○　○―――――――○");
+		System.out.println("｜１：　대전모드｜　｜２：　포획모드｜　｜３：포켓몬박스｜");
+		System.out.println("○―――――――○　○―――――――○　○―――――――○");
+		System.out.println("　　　　　　　　　　○―――――――○　○―――――――○");
+		System.out.println("　　　　　　　　　　｜４：　저장한다｜　｜５：　타이틀로｜");
+		System.out.println("　　　　　　　　　　○―――――――○　○―――――――○");
 		while(true) {
 			try {
 				num= Game_Display.GameScan.nextInt();
@@ -87,7 +96,19 @@ public class Game_Display {
 				break;
 			}else {
 				//다른 숫자 입력시
-				System.out.println("다시입력해주세요.");
+				System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
+				System.out.println("　　　　　　　　　　　Ｐｏｋｅｍｏｎ　　　　　　　　　　　");
+				System.out.println("　　　　　　　　　　　　포켓몬스터　　　　　　　　　　　　");
+				System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
+				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+				System.out.println("> 다시　입력해주세요.");
+				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+				System.out.println("○―――――――○　○―――――――○　○―――――――○");
+				System.out.println("｜１：　대전모드｜　｜２：　포획모드｜　｜３：포켓몬박스｜");
+				System.out.println("○―――――――○　○―――――――○　○―――――――○");
+				System.out.println("　　　　　　　　　　○―――――――○　○―――――――○");
+				System.out.println("　　　　　　　　　　｜４：　저장한다｜　｜５：　타이틀로｜");
+				System.out.println("　　　　　　　　　　○―――――――○　○―――――――○");
 			}
 		}
 			
@@ -95,8 +116,17 @@ public class Game_Display {
 	}
 	public static void BattleMode() {
 		//배틀모드 화면
-		System.out.println("도전하실 층을 입력해주세요(현재 최고층"+BattleTower.recordTowerLevel+"층)");
-		System.out.print("도전을 취소하시고 싶으시다면 0을 눌러주세요 : ");
+		System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
+		System.out.println("　　　　　　　　　　대전모드：배틀타워　　　　　　　　　　");
+		System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
+		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+		System.out.println("> 도전하실 층을 입력해주세요.");
+		System.out.println("> 현재 최고층"+BattleTower.recordTowerLevel+"/30");
+		System.out.println("> 도전을 취소하시고 싶으시다면 0을 눌러주세요.");
+		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+		System.out.println("○―――――――――――――――――○　○―――――――○");
+		System.out.println("｜Ｎ：　Ｎ층으로　이동　　　　　　　｜　｜０：　　타이틀｜");
+		System.out.println("○―――――――――――――――――○　○―――――――○");
 		BattleTower.BattleTowerScene();
 		
 	}
