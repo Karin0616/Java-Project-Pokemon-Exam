@@ -47,7 +47,7 @@ public class PokemonBox {
 			}
 		}catch (NullPointerException e) {
 			// TODO: handle exception
-			
+			continue;
 		}
 		
 		//System.out.println("");

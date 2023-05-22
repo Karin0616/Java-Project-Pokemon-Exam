@@ -39,17 +39,12 @@ public class PokemonBox {
 		System.out.println("소지 포켓몬");
 		//포켓몬 각각 스텟 출력부분. 통째로 바꿔도 됨
 		//포켓몬 인덱스, 이름,타입,레벨,체력,공 방 체 스피드 순서는 알아서 잘 배열해서 구성해주면 됨
-		try {
-			for(int i=0; i<Pokemon_Main.user.getBoxCount();i++) {
-				Pokemon p = Pokemon_Main.user.getPokemonEach(i).getPokemon();//이거는 잘 활용해보는게 편함
-				System.out.println((i+1)+p.name+" 레벨 : "+p.Lv+" 체력: "+(int)p.HP+" 공격력 : "+(int)p.ATK+" 방어력: "+(int)p.DEF+" 스피드: "+(int)p.SPD+" 타입"+p.type);
-				
-			}
-		}catch (NullPointerException e) {
-			// TODO: handle exception
+	
+		for(int i=0; i<Pokemon_Main.user.getBoxCount();i++) {
+			Pokemon p = Pokemon_Main.user.getPokemonEach(i).getPokemon();//이거는 잘 활용해보는게 편함
+			System.out.println((i+1)+p.name+" 레벨 : "+p.Lv+" 체력: "+(int)p.HP+" 공격력 : "+(int)p.ATK+" 방어력: "+(int)p.DEF+" 스피드: "+(int)p.SPD+" 타입"+p.type);
 			
 		}
-		
 		//System.out.println("");
 		System.out.println("포켓몬을 지정하시려면 포켓몬의 인덱스를 입력해주세요.");
 		System.out.println("메인으로 돌아가시려면 -1을 입력해주세요.");
@@ -92,7 +87,7 @@ public class PokemonBox {
 				change(index);
 				break;
 			case 3:
-				buybuy(index);
+				buybuy();
 				break;
 			case 4:
 				pokemonBoxScene();
@@ -169,10 +164,8 @@ public class PokemonBox {
 		System.out.println("변경되었습니다!");
 		pokemonChecker();
 	}
-	public static void buybuy(int num) {
-		System.out.println("잘가! "+p.name);
-		Pokemon_Main.user.removePokemon(num);
-		pokemonChecker();
+	public static void buybuy() {
+		
 	}
 	
 }//클래스끝
