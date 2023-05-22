@@ -47,9 +47,9 @@ public class Gatcha {
 			System.out.println("○―――――――○　○―――――――○　○―――――――○");
 			System.out.println("｜４：　바위산　｜　｜５：　　숲　　｜　｜６：　사　막　｜");
 			System.out.println("○―――――――○　○―――――――○　○―――――――○");
-			System.out.println("○―――――――○　　　　　　　　　　　○―――――――○");
-			System.out.println("｜７：　동　굴　｜　　　　　　　　　　　｜０：　돌아가기｜");
-			System.out.println("○―――――――○　　　　　　　　　　　○―――――――○");
+			System.out.println("○―――――――○　○―――――――○　○―――――――○");
+			System.out.println("｜７：　동　굴　｜　｜８：　설　산　｜　｜０：　돌아가기｜");
+			System.out.println("○―――――――○　○―――――――○　○―――――――○");
 			break;
 		case 2:
 		case 11:
