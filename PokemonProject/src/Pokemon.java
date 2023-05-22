@@ -1,5 +1,7 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
-public class Pokemon  {
+public class Pokemon implements Cloneable {
 	protected int index=0;
 	protected String name;
 	protected float HP;
@@ -21,29 +23,29 @@ public class Pokemon  {
 		//System.out.println(this.index+"인덱스");
 		this.add=add;
 		//System.out.println(this.add+"add");
-		this.name = pdex[dex].getNameA();
+		this.name = pdex[dex-1].getNameA();
 		//System.out.println(this.name);
-		this.type= pdex[dex].getType();
+		this.type= pdex[dex-1].getType();
 		//System.out.println(this.type);
-		this.Lv = pdex[dex].getLv();
+		this.Lv = pdex[dex-1].getLv();
 		//System.out.println(this.Lv+"레벨");
-		this.eveLv = pdex[dex].getEveLv();
+		this.eveLv = pdex[dex-1].getEveLv();
 		//System.out.println(this.eveLv+"진화레벨");
-		this.skillIndexNum=pdex[dex].getSkillIndexNum();
+		this.skillIndexNum=pdex[dex-1].getSkillIndexNum();
 		//System.out.println(this.skillIndexNum[0]);
-		HPCalculrator(pdex[dex].getBaseStatus(0),add);
-		ATKDEFSPDCalculrator(pdex[dex].getBaseStatus(1),pdex[dex].getBaseStatus(2),pdex[dex].getBaseStatus(3),add);
+		HPCalculrator(pdex[dex-1].getBaseStatus(0),add);
+		ATKDEFSPDCalculrator(pdex[dex-1].getBaseStatus(1),pdex[dex-1].getBaseStatus(2),pdex[dex-1].getBaseStatus(3),add);
 	}
 	public Pokemon(int dex, int add,int Lv) {
 		this.index=dex;
 		this.add=add;
-		this.name = pdex[dex].getNameA();
-		this.type= pdex[dex].getType();
+		this.name = pdex[dex-1].getNameA();
+		this.type= pdex[dex-1].getType();
 		this.Lv = Lv;
-		this.eveLv = pdex[dex].getEveLv();
-		this.skillIndexNum=pdex[dex].getSkillIndexNum();
-		HPCalculrator(pdex[dex].getBaseStatus(0),add);
-		ATKDEFSPDCalculrator(pdex[dex].getBaseStatus(1),pdex[dex].getBaseStatus(2),pdex[dex].getBaseStatus(3),add);
+		this.eveLv = pdex[dex-1].getEveLv();
+		this.skillIndexNum=pdex[dex-1].getSkillIndexNum();
+		HPCalculrator(pdex[dex-1].getBaseStatus(0),add);
+		ATKDEFSPDCalculrator(pdex[dex-1].getBaseStatus(1),pdex[dex-1].getBaseStatus(2),pdex[dex-1].getBaseStatus(3),add);
 	}
 	
 	public void HPCalculrator(float hp,int add) {
@@ -55,12 +57,8 @@ public class Pokemon  {
 		this.SPD=((2*spd)+add)*this.Lv/100;
 		
 	}
-	public void lvCalculrator(int[] Candy) {
-		for(int i=0;i<5;i++) {
-			if(Candy[i]==0) {
-				continue;
-			}else {
-				switch(i) {
+	public void lvCalculrator(int num) {
+			switch(num) {
 				case 0:
 					this.exp+=100;
 				case 1:
@@ -73,8 +71,6 @@ public class Pokemon  {
 					this.exp+=500;
 				}
 				
-			}
-		}
 		if(exp>=100&&this.Lv<10) {
 			this.Lv+=exp/100;
 		}else if (exp>=250&&this.Lv<20) {
@@ -98,5 +94,44 @@ public class Pokemon  {
 				this.Lv+=exp/1500;
 			}
 		}
+		//진화 관련 트리거
+		if(this.Lv>=this.eveLv&&this.pdex[this.index].getLv()==this.eveLv) {
+			evolve();
+		}
+		HPCalculrator(pdex[this.index-1].getBaseStatus(0),add);
+		ATKDEFSPDCalculrator(pdex[this.index-1].getBaseStatus(1),pdex[this.index-1].getBaseStatus(2),pdex[this.index-1].getBaseStatus(3),add);
+	
+		
 	}
+	public void evolve() {
+	//진화메소드	
+	
+		
+		this.name = pdex[this.index].getNameA();
+		this.type= pdex[this.index].getType();
+		this.eveLv = pdex[this.index].getEveLv();
+		this.skillIndexNum=pdex[this.index].getSkillIndexNum();
+		HPCalculrator(pdex[this.index].getBaseStatus(0),add);
+		ATKDEFSPDCalculrator(pdex[this.index].getBaseStatus(1),pdex[this.index].getBaseStatus(2),pdex[this.index].getBaseStatus(3),add);
+		this.index+=1;
+		
+	}
+	
+	protected Object clone() throws CloneNotSupportedException{//deep copy
+		Pokemon cloned = (Pokemon)super.clone();
+		cloned.skillIndexNum = Arrays.copyOf(this.skillIndexNum, this.skillIndexNum.length);
+		
+		return cloned;
+	}
+	public Pokemon getPokemon() {//deep copy
+		Pokemon cloned = null;
+		try {
+			cloned = (Pokemon)clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO: handle exception
+		}
+		return cloned;
+	}
+	
+	
 }

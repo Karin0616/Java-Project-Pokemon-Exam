@@ -1,10 +1,12 @@
 import java.io.*;
 
+import java.nio.charset.StandardCharsets;
+
 public class SaveLoadManager {
     private static final String FILE_PATH = "data.csv";
 
     public static void saveData(UserData userdata) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(FILE_PATH), StandardCharsets.UTF_8))){
             writer.write(String.valueOf(userdata.getBoxCount()));
             writer.newLine();
             writer.write(String.valueOf(userdata.getTrainerLV()));
@@ -18,28 +20,42 @@ public class SaveLoadManager {
 
             Pokemon[] gotPokemon = userdata.getPokemon();
             for (Pokemon pokemon : gotPokemon) {
-                writer.write(pokemon.index);
+            	if(pokemon== null) {
+            		break;
+            	}
+            	System.out.println(pokemon.index);
+                writer.write(String.valueOf(pokemon.index));
                 writer.newLine();
-                writer.write(pokemon.add);
+                System.out.println(pokemon.add);
+                writer.write(String.valueOf(pokemon.add));
                 writer.newLine();
-                writer.write(pokemon.Lv);
+                System.out.println(String.valueOf(pokemon.Lv));
+                writer.write(String.valueOf(pokemon.Lv));
                 writer.newLine();
               }
 
             System.out.println("Data saved successfully!");
         } catch (IOException e) {
             System.out.println("Failed to save data: " + e.getMessage());
+        }catch (NullPointerException n) {
+        	System.out.println("더이상 데이터 없음");
         }
+        
+        Game_Display.MainScreen();//메인화면으로 복귀
     }
 
     public static void loadData(UserData userdata) {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             int boxCount = Integer.parseInt(reader.readLine());
             int trainerLV = Integer.parseInt(reader.readLine());
-
+            //테스트
+            System.out.println(boxCount);
+            System.out.println(trainerLV);
+            
             int[] candies = new int[5];
             for (int i = 0; i < 5; i++) {
                 candies[i] = Integer.parseInt(reader.readLine());
+                System.out.println(candies[i]);
             }
 
             userdata.setBoxCount(boxCount);
@@ -49,17 +65,15 @@ public class SaveLoadManager {
             Pokemon[] gotPokemon = new Pokemon[20];
             String line;
             int index = 0;
-            while ((line = reader.readLine()) != null && index < 20) {
-                String[] pokemonData = line.split(",");
-                // Parse the pokemon data and create a new Pokemon object
-                // Assuming the CSV format is: 
-                int dex = Integer.parseInt(pokemonData[0]);
-                int add = Integer.parseInt(pokemonData[1]);
-                int Lv = Integer.parseInt(pokemonData[2]);
+            while ( index < boxCount) {
+            
+                int dex = Integer.parseInt(reader.readLine());           
+                int add = Integer.parseInt(reader.readLine());
+                int Lv = Integer.parseInt(reader.readLine());
                 Pokemon pokemon = new Pokemon(dex,add,Lv);
                 
-
-                gotPokemon[dex++] = pokemon;
+                System.out.println(pokemon.name);
+                gotPokemon[index++] = pokemon;
             }
 
             userdata.setGotPokemon(gotPokemon);
@@ -67,6 +81,10 @@ public class SaveLoadManager {
             System.out.println("Data loaded successfully!");
         } catch (IOException e) {
             System.out.println("Failed to load data: " + e.getMessage());
+        }catch(ArrayIndexOutOfBoundsException e) {
+        	System.out.println("끝");
         }
+        System.out.println("메인으로 이동");
+        Game_Display.MainScreen();
   }
 }

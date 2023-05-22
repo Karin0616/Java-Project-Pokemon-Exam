@@ -6,6 +6,7 @@ public class Pokemon_Main {
 		// TODO Auto-generated method stub
 		user.setupStart();
 		//System.out.println(pdex[1].getName(1));//test
+		
 		Game_Display.StartScreen();
 		
 		
