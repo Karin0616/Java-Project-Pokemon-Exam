@@ -18,8 +18,8 @@ public class UserData {
 		this.gotPokemon[0] =  new Pokemon(1,5,5);
 		this.boxCount =1;
 		this.trainerLV=50;//임시
-		for(int i : Candy) {
-			i=0;
+		for(int i=0;i<Candy.length;i++) {
+			Candy[i]=10;//임시
 		}
 	}
 	public Pokemon[] getPokemon() {
@@ -54,9 +54,13 @@ public class UserData {
 			this.Candy[i]= Candy[i];
 		}
 	}
-	
+	public void setCandyDown(int num) {
+		this.Candy[num]-=1;
+	}
 	public void changeBox(int first, int second) {
-		
+		Pokemon p = this.gotPokemon[first-1].getPokemon();
+		this.gotPokemon[first-1]= this.gotPokemon[second].getPokemon();
+		this.gotPokemon[second]=p.getPokemon();
 	}
 	
 	
