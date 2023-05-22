@@ -17,7 +17,21 @@ public class Gatcha {
 		if(Pokemon_Main.user.getBoxCount()==20) {
 			printer(98);
 		}
-		int selecter= Game_Display.GameScan.nextInt();
+		int selecter=0;
+		while(true) {
+			try {
+				selecter= Game_Display.GameScan.nextInt();
+			}catch(NumberFormatException e) {
+				System.out.println("0에서 7 사이의 숫자를 입력해주세요.");
+			}
+			
+			//예외처리
+			if(selecter>=0&&selecter<=7) {
+				break;
+			}else {
+				System.out.println("0에서 7 사이의 값을 입력해주세요.");
+			}
+		}	
 		switch(selecter) {
 		case 0:
 			Game_Display.MainScreen();
@@ -30,6 +44,9 @@ public class Gatcha {
 		
 	}
 	public static void printer(int num) {
+		/*
+		 * 텍스트ui부분
+		 */
 		switch (num) {
 		case 1:
 			System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
@@ -89,24 +106,57 @@ public class Gatcha {
 			//돌아가기 기능
 			gatchamode();
 			break;
+		
 		}
 		
 		
 	}
 	public static void map(int num) {
 		//여기서 이것저것 다함
-		
+		/*
+		 * 여기서 printer()부분이 이제 실행되는 것이니까 잘 찾아넣고
+		 * 예외처리 trycatch에 catch부분 프린트도 알아서 잘 바꿔도됨.
+		 * 
+		 */
 		//help
 		switch(num) {
 		case 1:
 			place="초원"; //테스트용으로 일단 미정으로 바꿈 원래 초원임
 			printer(11);
-			int selecter= Game_Display.GameScan.nextInt();
+			int selecter=0;
+			while(true) {
+				try {
+					selecter= Game_Display.GameScan.nextInt();
+				}catch(NumberFormatException e) {
+					System.out.println("1에서 2 사이의 숫자를 입력해주세요.");
+				}
+				
+				//예외처리
+				if(selecter==1 ||selecter==2) {
+					break;
+				}else {
+					System.out.println("1 혹은 2만 입력 가능합니다.");
+				}
+			}			
+			
 			//System.out.println("prograss1");
 			pokemonGenerator();
 			//System.out.println("prograss2");
 			printer(12);
-			selecter= Game_Display.GameScan.nextInt();
+			while(true) {
+				try {
+					selecter= Game_Display.GameScan.nextInt();
+				}catch(NumberFormatException e) {
+					System.out.println("1에서 2 사이의 숫자를 입력해주세요.");
+				}
+				
+				//예외처리
+				if(selecter==1 ||selecter==2) {
+					break;
+				}else {
+					System.out.println("1 혹은 2만 입력 가능합니다.");
+				}
+			}	
 			if(selecter==1) {
 				
 				Pokemon tmP[]=Pokemon_Main.user.getPokemon();
@@ -131,14 +181,14 @@ public class Gatcha {
 	}
 	public static void setLv(int tmpPindex) {
 		int Tlv = Pokemon_Main.user.getTrainerLV();
-		System.out.println("트레이너레벨"+Tlv);//임시
+		//System.out.println("트레이너레벨"+Tlv);//임시
 		if(Tlv<10) {
 			randLv=random.nextInt(1,Tlv);
-			System.out.println("야생"+randLv);//임시
+			//System.out.println("야생"+randLv);//임시
 		}else if(Tlv<20) {
 			//최소값 설정
 			randLv=random.nextInt(7,Tlv);
-			System.out.println("야생"+randLv);//임시
+			//System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
@@ -147,7 +197,7 @@ public class Gatcha {
 		}else if(Tlv<30) {
 			//최소값 설정
 			randLv=random.nextInt(16, Tlv);
-			System.out.println("야생"+randLv);//임시
+			//System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
@@ -156,7 +206,7 @@ public class Gatcha {
 		}else if(Tlv<40) {
 			//최소값 설정
 			randLv=random.nextInt(27, Tlv);
-			System.out.println("야생"+randLv);//임시
+		//	System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
@@ -165,7 +215,7 @@ public class Gatcha {
 		}else if(Tlv<50) {
 			//최소값 설정
 			randLv=random.nextInt(35, Tlv);
-			System.out.println("야생"+randLv);//임시
+			//System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
@@ -174,7 +224,7 @@ public class Gatcha {
 		}else if(Tlv<60) {
 			//최소값 설정
 			randLv=random.nextInt(45, Tlv);
-			System.out.println("야생"+randLv);//임시
+		//	System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();
@@ -183,7 +233,7 @@ public class Gatcha {
 		}else if(Tlv<101) {
 			//최소값 설정
 			randLv=random.nextInt(55, Tlv);
-			System.out.println("야생"+randLv);//임시
+		//	System.out.println("야생"+randLv);//임시
 			if(randLv<pdex[tmpPindex].getLv()) {
 				//만약 랜덤레벨이 본인 최소 레벨보다 낮을 때
 				randLv=pdex[tmpPindex].getLv();

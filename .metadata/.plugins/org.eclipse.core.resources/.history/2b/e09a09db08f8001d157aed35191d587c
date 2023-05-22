@@ -1,0 +1,143 @@
+
+/*
+ *클래스 설명
+ *소지 포켓몬 확인 (이름 레벨 능력치)개체치는 일부로 안보여줄거임
+ *트레이너 레벨 확인
+ *소지 사탕 갯수 확인
+ *소지포켓몬 사탕맥이기
+ *포켓몬 순서 변경(배열 0,1,2번이 전투몹임)
+ *포켓몬 놓아주기
+ *할까말까 고민중인거
+ *트레이너의 최고기록 확인
+ */
+public class PokemonBox {
+	static Pokemon p=null;
+	public static int selecter=0;
+	public static int index=0;
+	public static void pokemonBoxScene() {
+		/* 텍스트UI부분
+		 * candy[]는 0번부터 4번까지 총5개, xs s m L XL 순
+		 * 
+		 */
+		System.out.println("트레이너 레벨"+Pokemon_Main.user.getTrainerLV());
+		int candy[]= Pokemon_Main.user.getEXPCandyCount();
+		
+		System.out.println("현재 소지 경험사탕: Xs "+candy[0]+"S "+candy[1]+"M "+candy[2]+"L "+candy[3]+"XL "+candy[4]);
+		System.out.println("1.소지 포켓몬확인 2.뒤로가기");
+		selecter = Game_Display.GameScan.nextInt();
+		if(selecter == 1) {
+			pokemonChecker();
+		}else if(selecter == 2) {
+			Game_Display.MainScreen();
+		}
+	}
+	public static void pokemonChecker() {
+		/*
+		 * 텍스트 ui부분
+		 */
+		
+		System.out.println("소지 포켓몬");
+		//포켓몬 각각 스텟 출력부분. 통째로 바꿔도 됨
+		//포켓몬 인덱스, 이름,타입,레벨,체력,공 방 체 스피드 순서는 알아서 잘 배열해서 구성해주면 됨
+		
+		
+		for(int i=0; i<Pokemon_Main.user.getBoxCount();i++) {
+			Pokemon p = Pokemon_Main.user.getPokemonEach(i);//이거는 잘 활용해보는게 편함
+			System.out.println((i+1)+p.name+" 레벨 : "+"체력: "+p.HP+p.Lv+"공격력 : "+p.ATK+"방어력: "+p.DEF+"스피드: "+p.SPD+"타입"+p.type);
+		}
+		//System.out.println("");
+		System.out.println("포켓몬을 지정하시려면 포켓몬의 인덱스를 입력해주세요.");
+		System.out.println("메인으로 돌아가시려면 -1을 입력해주세요.");
+		while(true) {
+			try {
+				selecter = Game_Display.GameScan.nextInt();
+				
+			}catch (NumberFormatException e) {
+				System.out.println("다시 입력해주세요.");
+			}
+			if(selecter==-1) {
+				Game_Display.MainScreen();
+				break;
+			}else if(selecter<-1||selecter>Pokemon_Main.user.getBoxCount()) {
+				System.out.println("다시 입력해주세요.");
+			}else {
+				break;
+			}
+			
+		}
+		index=selecter;//포켓몬 인덱스값 저장
+		p = Pokemon_Main.user.getPokemonEach(selecter-1);//이거는 잘 활용해보는게 편함
+		System.out.println((selecter)+p.name+" 레벨 : "+"체력: "+p.HP+p.Lv+"공격력 : "+p.ATK+"방어력: "+p.DEF+"스피드: "+p.SPD+"타입"+p.type);
+		System.out.println("무엇을 하시겠습니까?");
+		System.out.println("1. 경험사탕을 먹인다. 2. 순서를 바꾼다. 3. 놓아준다.4. 돌아가기");
+		int tmp=0;
+		while(true) {
+			try {
+				tmp = Game_Display.GameScan.nextInt();
+				
+			}catch (NumberFormatException e) {
+				System.out.println("다시 입력해주세요.");
+			}
+				
+			switch(tmp) {
+			case 1:
+				useCandy();
+				break;
+			case 2:
+				change();
+				break;
+			case 3:
+				buybuy();
+				break;
+			case 4:
+				pokemonBoxScene();
+				break;
+			default:
+				System.out.println("다시 입력해주세요.");
+			}
+		}
+		
+		
+	}//포켓몬 체커 끝
+	
+	public static void useCandy() {
+		/*
+		 * 텍스트 ui 
+		 */
+		System.out.println("어떤 사탕을 쓰실 건가요?");
+		int candy[]= Pokemon_Main.user.getEXPCandyCount();
+		System.out.println("현재 소지 경험사탕: Xs "+candy[0]+"S "+candy[1]+"M "+candy[2]+"L "+candy[3]+"XL "+candy[4]);
+		System.out.println("순서대로 0번, 1번,2번,3번,4번,5번입니다. 돌아가시려면 9번을 입력해주세요.");
+		boolean ch=true;
+		while(ch) {
+			try {
+				selecter = Game_Display.GameScan.nextInt();
+				
+			}catch (NumberFormatException e) {
+				System.out.println("다시 입력해주세요.");
+			}
+			switch(selecter) {
+				case 0:
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+					p.lvCalculrator(selecter);
+					Pokemon_Main.user.setPokemonReplace(index, p);
+					ch=false;
+					break;
+				case 9:
+					
+			}
+
+		}//while
+	}
+	public static void change() {
+		
+	}
+	public static void buybuy() {
+		
+	}
+	
+}//클래스끝

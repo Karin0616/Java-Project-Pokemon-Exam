@@ -9,6 +9,9 @@ public class Game_Display {
 	}
 	
 	public static void StartScreen() {
+		/*
+		 * 텍스트 ui
+		 */
 		//타이틀화면
 		System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
 		System.out.println("　　　　　　　　　　　Ｐｏｋｅｍｏｎ　　　　　　　　　　　");
@@ -20,19 +23,19 @@ public class Game_Display {
 		System.out.println("　　　　　　　　　　　             ｜［３］　　끝내기｜");
 		System.out.println("　　　　　　　　　　　             ◈――――――――◈");
 		while(true) {
-			num = GameScan.nextInt();
+			try {
+				num= Game_Display.GameScan.nextInt();
+			}catch(NumberFormatException e) {
+				System.out.println("정수를 입력해주세요.");
+			}
+			
 			if(num>0&&num<4) {
 				switch(num) {
 				case 1://처음부터
 					Game_Display.MainScreen();
 					break;
 				case 2://불러오기
-					try {
-						SaveLoadManager.loadData(Pokemon_Main.user);
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+					load();
 					break;
 				case 3://끝내기
 					GameScan.close();
@@ -50,6 +53,9 @@ public class Game_Display {
 	}
 	public static void MainScreen() {
 		//메인화면
+		/*
+		 * 텍스트 ui
+		 */
 		System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
 		System.out.println("　　　　　　　　　　　Ｐｏｋｅｍｏｎ　　　　　　　　　　　");
 		System.out.println("　　　　　　　　　　　　포켓몬스터　　　　　　　　　　　　");
@@ -64,7 +70,11 @@ public class Game_Display {
 		System.out.println("　　　　　　　　　　｜４：　저장한다｜　｜５：　타이틀로｜");
 		System.out.println("　　　　　　　　　　○―――――――○　○―――――――○");
 		while(true) {
-			num = GameScan.nextInt();
+			try {
+				num= Game_Display.GameScan.nextInt();
+			}catch(NumberFormatException e) {
+				System.out.println("정수를 입력해주세요.");
+			}
 			if(num>0&&num<6) {
 				switch(num) {
 				case 1://대전모드
@@ -74,10 +84,10 @@ public class Game_Display {
 					GotchaMode();
 					break;
 				case 3://포켓몬박스
-					
+					pokemonBox();
 					break;
 				case 4://저장
-					SaveLoadManager.saveData(Pokemon_Main.user);
+					save();
 					break;
 				case 5://타이틀로
 					StartScreen();
@@ -125,4 +135,17 @@ public class Game_Display {
 		//System.out.println("포획모드");
 		Gatcha.gatchamode();
 	}
+	public static void pokemonBox() {
+		//포켓몬 박스확인
+		PokemonBox.pokemonBoxScene();
+	}
+	public static void save() {
+		SaveLoadManager.saveData(Pokemon_Main.user);
+		
+	}
+	public static void load() {
+		SaveLoadManager.loadData(Pokemon_Main.user);
+		
+	}
+	
 }
