@@ -16,6 +16,8 @@ public class UserData {
 	}
 	public void setupStart() {
 		this.gotPokemon[0] =  new Pokemon(1,5,5);
+		this.gotPokemon[1]= new Pokemon(4,5,5);
+		this.gotPokemon[2]= new Pokemon(7,5,5);
 		this.boxCount =1;
 		this.trainerLV=50;//임시
 		for(int i=0;i<Candy.length;i++) {
