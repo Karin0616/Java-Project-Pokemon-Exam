@@ -16,6 +16,8 @@ public class BattleTower {
 				System.out.println("　　　　　　　　　　대전모드：배틀타워　　　　　　　　　　");
 				System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
 				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+				System.out.println("> 현재 최고층"+BattleTower.recordTowerLevel+"/30");
+				System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 				System.out.println("> "+towerLevel+"층은 존재하지 않습니다.");
 				System.out.println("> 1에서 30 사이의 정수를 입력해주세요.");
 				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -28,6 +30,8 @@ public class BattleTower {
 				System.out.println("　　　　　　　　　　대전모드：배틀타워　　　　　　　　　　");
 				System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
 				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+				System.out.println("> 현재 최고층"+BattleTower.recordTowerLevel+"/30");
+				System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 				System.out.println("> 입력하신 층은 현재 도전하실 수 없습니다.");
 				System.out.println("> 이전 층을 먼저 클리어해주세요.");
 				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
