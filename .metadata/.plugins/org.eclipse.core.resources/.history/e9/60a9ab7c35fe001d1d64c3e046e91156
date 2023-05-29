@@ -154,7 +154,6 @@ public class BattleTower {
 			break;
 		case 73:
 			System.out.println(enemy.get(currentEnemy).name+"의 "+Skill.getSkillNameByIndex(enemy.get(currentEnemy).skillIndexNum[2])+"공격!");
-			
 			if(eAdebuff!=0) {
 				System.out.println(player.get(currentPlayer).name+"의 방어가 낮아졌다.");
 			}else if(eDdebuff!=0) {
@@ -542,7 +541,8 @@ public class BattleTower {
 		if(playerDflag==1) {
 			System.out.println(player.get(currentPlayer).name+"은 방어에 실패했다!");
 		}
-		
+		eAdebuff=0;
+		eDdebuff=0;
 	}
 	public static void enemyAttack(int num) {
 		if(num==1) {//자속기
