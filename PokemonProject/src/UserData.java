@@ -2,7 +2,7 @@
 public class UserData {
 	private int boxCount=0;
 	private Pokemon gotPokemon[]= new Pokemon[20];
-	private int trainerLV=10; //테스트때문에 바꿈 디폴트값 1
+	private int trainerLV=1; //테스트때문에 바꿈 디폴트값 1
 	private int Candy[]=new int[5];
 	private int recordTowerLevel=1;
 	public UserData() {
@@ -19,9 +19,9 @@ public class UserData {
 		this.gotPokemon[1]= new Pokemon(4,5,5);
 		this.gotPokemon[2]= new Pokemon(7,5,5);
 		this.boxCount =3;
-		this.trainerLV=10;//임시
+		this.trainerLV=1;//임시
 		for(int i=0;i<Candy.length;i++) {
-			Candy[i]=2;//임시
+			Candy[i]=0;//임시
 		}
 		
 	}

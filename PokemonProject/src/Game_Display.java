@@ -7,7 +7,22 @@ public class Game_Display {
 	public Game_Display(){
 		
 	}
-	
+
+	public static String toFull(String s) {
+		//반각을 전각문자로 변환
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (c >= 0x21 && c <= 0x7e) {
+				c += 0xfee0;
+			}
+			else if (c == 0x20) {
+				c = 0x3000;
+			}
+			sb.append(c);
+		}
+		return sb.toString();
+	}
 	public static void StartScreen() {
 		/*
 		 * 텍스트 ui
@@ -160,7 +175,7 @@ public class Game_Display {
 		System.out.println("　　　　　　　　　　대전모드：배틀타워　　　　　　　　　　");
 		System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
 		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-		System.out.println("> 현재 최고층"+BattleTower.recordTowerLevel+"/30");
+		System.out.println("> 현재 최고층 : "+BattleTower.recordTowerLevel+"/30");
 		System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 		System.out.println("> 도전하실 층을 입력해주세요.");
 		System.out.println("> 도전을 취소하시고 싶으시다면 0을 눌러주세요.");
