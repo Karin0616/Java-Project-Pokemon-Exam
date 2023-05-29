@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class SkillDex {
-    private static SkillDex[] SDex = new SkillDex[9];//스킬 총 개수
+    private static SkillDex[] SDex = new SkillDex[217];//스킬 총 개수
     private String name;
     private float power;
     private float ATKnurf;

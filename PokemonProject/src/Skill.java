@@ -25,8 +25,9 @@ public class Skill extends Pokemon{
 	}
 	public static float ATKdebuffCal(Pokemon defender,int skillIndex) {
 		//피격대상과 시전자의 스킬을 받아옴
+		
 		for(int i=0;i<skill.length;i++) {
-			if(skill[i].getIndexNum()==skillIndex) {
+			if(skill[i].getIndexNum()==skillIndex) {			
 				skill_ATKdebuff=skill[i].getATKnurf()*0.8f;
 			}
 		}
@@ -44,7 +45,15 @@ public class Skill extends Pokemon{
 		return skill_DEFdebuff;	
 	}
 	
-
+	public static String getSkillNameByIndex(int index) {
+		String name = null;
+		for(int i=0;i<skill.length;i++) {
+			if(skill[i].getIndexNum()==index) {
+				name = skill[i].getName();
+			}
+		}
+		return name;
+	}
 
 
 
