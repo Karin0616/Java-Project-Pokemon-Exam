@@ -50,7 +50,6 @@ public class Game_Display {
 					break;
 				case 2://불러오기
 					load();
-					
 					break;
 				case 3://끝내기
 					GameScan.close();
@@ -186,7 +185,6 @@ public class Game_Display {
 	}
 	public static void load() {
 		SaveLoadManager.loadData(Pokemon_Main.user);
-		
 		
 	}
 	

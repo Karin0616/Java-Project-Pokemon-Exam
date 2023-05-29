@@ -50,7 +50,6 @@ public class Game_Display {
 					break;
 				case 2://불러오기
 					load();
-					
 					break;
 				case 3://끝내기
 					GameScan.close();
@@ -186,8 +185,8 @@ public class Game_Display {
 	}
 	public static void load() {
 		SaveLoadManager.loadData(Pokemon_Main.user);
-		
-		
+		BattleTower.recordTowerLevel=Pokemon_Main.user.getRecordTowerLevel();
+		System.out.println("배틀타워"+BattleTower.recordTowerLevel+"불러온거"+Pokemon_Main.user.getRecordTowerLevel());
 	}
 	
 }

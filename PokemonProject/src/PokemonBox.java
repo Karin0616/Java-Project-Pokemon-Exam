@@ -24,12 +24,23 @@ public class PokemonBox {
 		
 		System.out.println("현재 소지 경험사탕: Xs "+candy[0]+"S "+candy[1]+"M "+candy[2]+"L "+candy[3]+"XL "+candy[4]);
 		System.out.println("1.소지 포켓몬확인 2.뒤로가기");
-		selecter = Game_Display.GameScan.nextInt();
-		if(selecter == 1) {
-			pokemonChecker();
-		}else if(selecter == 2) {
-			Game_Display.MainScreen();
+		while(true) {
+			try {
+				selecter = Game_Display.GameScan.nextInt();
+				if(selecter == 1) {
+					pokemonChecker();
+				}else if(selecter == 2) {
+					Game_Display.MainScreen();
+				}else {
+					System.out.println("다시 입력해주세요.");
+				}
+			}catch (NumberFormatException e) {
+				// TODO: handle exception
+			}
+			break;
 		}
+		
+		
 	}
 	public static void pokemonChecker() {
 		/*

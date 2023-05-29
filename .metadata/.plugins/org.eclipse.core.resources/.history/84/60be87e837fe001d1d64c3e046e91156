@@ -58,7 +58,7 @@ public class SaveLoadManager {
             int[] candies = new int[5];
             for (int i = 0; i < 5; i++) {
                 candies[i] = Integer.parseInt(reader.readLine());
-                //System.out.println(candies[i]);
+                System.out.println(candies[i]);
             }
 
             userdata.setBoxCount(boxCount);
@@ -88,7 +88,7 @@ public class SaveLoadManager {
         }catch(ArrayIndexOutOfBoundsException e) {
         	System.out.println("끝");
         }
-       
+        System.out.println("배틀타워"+BattleTower.recordTowerLevel+"불러온거"+Pokemon_Main.user.getRecordTowerLevel());
         BattleTower.recordTowerLevel=Pokemon_Main.user.getRecordTowerLevel();
         System.out.println("메인으로 이동");
         Game_Display.MainScreen();

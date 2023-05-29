@@ -23,6 +23,7 @@ public class UserData {
 		for(int i=0;i<Candy.length;i++) {
 			Candy[i]=2;//임시
 		}
+		
 	}
 	public Pokemon[] getPokemon() {
 		return this.gotPokemon;
