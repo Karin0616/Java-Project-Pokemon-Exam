@@ -9,14 +9,15 @@ public class Skill extends Pokemon{
 	public static float dmgCal(Pokemon attacker,Pokemon defender,int skillIndex) {
 		//포켓몬 공격자, 수비자,공격자의 스킬인덱스을 받아옴
 		float same=1;
-		
+		skill_Damage=0;
 		for(int i=0;i<skill.length;i++) {
 			if(skill[i].getIndexNum()==skillIndex) {
 				if(attacker.type == skill[i].getType()) {
 					same=1.5f;
 				}
 				Skill.effecter(skill[i].getType(),defender.type);
-				skill_Damage = (10*(attacker.ATK*skill_ATKdebuff)/(defender.DEF*skill_DEFdebuff)*effect*same)+1f;
+				skill_Damage = (10*(attacker.ATK*skill_ATKdebuff)/(defender.DEF)*effect*same)+1f;
+				//System.out.println("데미지"+skill_Damage);
 			}
 		}
 		effect=1;
@@ -25,7 +26,7 @@ public class Skill extends Pokemon{
 	}
 	public static float ATKdebuffCal(Pokemon defender,int skillIndex) {
 		//피격대상과 시전자의 스킬을 받아옴
-		
+		skill_ATKdebuff=1;
 		for(int i=0;i<skill.length;i++) {
 			if(skill[i].getIndexNum()==skillIndex) {			
 				skill_ATKdebuff=skill[i].getATKnurf()*0.8f;
@@ -36,6 +37,7 @@ public class Skill extends Pokemon{
 	}
 	public static float DEFdebuffCal(Pokemon defender,int skillIndex) {
 		//피격대상과 시전자의 스킬을 받아옴
+		skill_DEFdebuff=1;
 		for(int i=0;i<skill.length;i++) {
 			if(skill[i].getIndexNum()==skillIndex) {
 				skill_DEFdebuff=skill[i].getDEFnurf()*0.8f;
@@ -58,6 +60,7 @@ public class Skill extends Pokemon{
 
 
 public static void effecter(String skillType,String enemyType) {
+	effect=1;
 	if(skillType.equals("노말")) {
 		switch(enemyType) {
 		case "노말":

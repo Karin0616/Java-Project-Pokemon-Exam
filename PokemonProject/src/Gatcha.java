@@ -43,7 +43,7 @@ public class Gatcha {
 			}
 
 			//예외처리
-			if(selecter>=0&&selecter<=7) {
+			if(selecter>=0&&selecter<=8) {
 				break;
 			}else {
 				System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
@@ -295,30 +295,30 @@ public class Gatcha {
 		//help
 		int selecter;
 		switch(num) {
-		case 1:
-			place="초원";
-			printer(11);
-			selecter=0;
-			while(true) {
-				try {
-					selecter= Game_Display.GameScan.nextInt();
-				}catch(NumberFormatException e) {
-					System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
-					System.out.println("　　　　　　　　　　　포　획　모　드　　　　　　　　　　　");
-					System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
-					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-					System.out.println("> 현재 위치 : "+place);
-					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
-					System.out.println(">　1 또는 2를 입력해주세요.");
-					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-					System.out.println("○―――――――――――――――――――――――――――○");
-					System.out.println("｜１：　나무　위를　조사한다　　　　　　　　　　　　　　｜");
-					System.out.println("○―――――――――――――――――――――――――――○");
-					System.out.println("○―――――――――――――――――――――――――――○");
-					System.out.println("｜２：　수풀을　헤집는다　　　　　　　　　　　　　　　　｜");
-					System.out.println("○―――――――――――――――――――――――――――○");
-				}
+			case 1:
+				place="초원";
+				printer(11);
+				selecter=0;
+				while(true) {
+					try {
+						selecter= Game_Display.GameScan.nextInt();
+					}catch(NumberFormatException e) {
+						System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
+						System.out.println("　　　　　　　　　　　포　획　모　드　　　　　　　　　　　");
+						System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
+						System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+						System.out.println("> 현재 위치 : "+place);
+						System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
+						System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
+						System.out.println(">　1 또는 2를 입력해주세요.");
+						System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+						System.out.println("○―――――――――――――――――――――――――――○");
+						System.out.println("｜１：　나무　위를　조사한다　　　　　　　　　　　　　　｜");
+						System.out.println("○―――――――――――――――――――――――――――○");
+						System.out.println("○―――――――――――――――――――――――――――○");
+						System.out.println("｜２：　수풀을　헤집는다　　　　　　　　　　　　　　　　｜");
+						System.out.println("○―――――――――――――――――――――――――――○");
+					}
 
 				//예외처리
 				if(selecter==1 ||selecter==2) {
@@ -1127,6 +1127,7 @@ public class Gatcha {
 	}
 	public static void setLv(int tmpPindex) {
 		int Tlv = Pokemon_Main.user.getTrainerLV();
+		
 		//System.out.println("트레이너레벨"+Tlv);//임시
 		if(Tlv<10) {
 			randLv=random.nextInt(1,Tlv);
@@ -1196,14 +1197,19 @@ public class Gatcha {
 			//System.out.println(tmpPindex);
 			//Game_Display.GameScan.next();
 			if(pdex[tmpPindex].getPlace().equals(place)&&pdex[tmpPindex].getLv()<=Pokemon_Main.user.getTrainerLV()) {
+				//System.out.println("레벨"+pdex[tmpPindex].getLv()+pdex[tmpPindex].getIndexNum()+pdex[tmpPindex].getNameA());
+				tmpPindex+=1;
 				break;
 			}
 			//Game_Display.GameScan.next();
 			//System.out.println("prograss6");
 		}
 		setRandomAdd();
-		setLv(tmpPindex);
+		setLv(tmpPindex-1);
+		
 		p=new Pokemon(tmpPindex,randomAdd,randLv);
+		
+		
 		//System.out.println("prograss4");
 		
 	}

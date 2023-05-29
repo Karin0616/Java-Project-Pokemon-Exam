@@ -11,6 +11,8 @@ public class SaveLoadManager {
             writer.newLine();
             writer.write(String.valueOf(userdata.getTrainerLV()));
             writer.newLine();
+            writer.write(String.valueOf(userdata.getRecordTowerLevel()));
+            writer.newLine();
 
             int[] candies = userdata.getEXPCandyCount();
             for (int candy : candies) {
@@ -23,13 +25,13 @@ public class SaveLoadManager {
             	if(pokemon== null) {
             		break;
             	}
-            	System.out.println(pokemon.index);
+            	//System.out.println(pokemon.index);
                 writer.write(String.valueOf(pokemon.index));
                 writer.newLine();
-                System.out.println(pokemon.add);
+               // System.out.println(pokemon.add);
                 writer.write(String.valueOf(pokemon.add));
                 writer.newLine();
-                System.out.println(String.valueOf(pokemon.Lv));
+              //  System.out.println(String.valueOf(pokemon.Lv));
                 writer.write(String.valueOf(pokemon.Lv));
                 writer.newLine();
               }
@@ -48,9 +50,10 @@ public class SaveLoadManager {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             int boxCount = Integer.parseInt(reader.readLine());
             int trainerLV = Integer.parseInt(reader.readLine());
+            int recordTowerLevel = Integer.parseInt(reader.readLine());
             //테스트
-            System.out.println(boxCount);
-            System.out.println(trainerLV);
+           // System.out.println(boxCount);
+          //  System.out.println(trainerLV);
             
             int[] candies = new int[5];
             for (int i = 0; i < 5; i++) {
@@ -60,6 +63,7 @@ public class SaveLoadManager {
 
             userdata.setBoxCount(boxCount);
             userdata.setTrainerLv(trainerLV);
+            userdata.setRecordTowerLevel(recordTowerLevel);
             userdata.setEXPCandyCount(candies);
 
             Pokemon[] gotPokemon = new Pokemon[20];
@@ -72,7 +76,7 @@ public class SaveLoadManager {
                 int Lv = Integer.parseInt(reader.readLine());
                 Pokemon pokemon = new Pokemon(dex,add,Lv);
                 
-                System.out.println(pokemon.name);
+         //       System.out.println(pokemon.name);
                 gotPokemon[index++] = pokemon;
             }
 

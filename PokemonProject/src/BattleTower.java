@@ -22,6 +22,9 @@ public class BattleTower {
 	
 	protected static int enemyPatternCnt=1;
 	
+	protected static int enemyDieflag=0;
+	protected static int playerDieflag=0;
+	
 	protected static int playerDflag=0;
 	protected static int enemyDflag=0;
 	SkillDex[] sDex = SkillDex.getInstance();
@@ -98,18 +101,23 @@ public class BattleTower {
 		case 9://적 몹 쓰러짐
 			System.out.println(towerLevel+"층의 수호자"+enemy.get(currentEnemy).name+"가 쓰러졌다!");
 			currentEnemy+=1;
+			enemyDieflag=1;
+			enemyFullHp=enemy.get(currentEnemy).HP;
 			System.out.println(towerLevel+"층의 수호자"+enemy.get(currentEnemy).name+"가 나타났다!");
 			break;
 		case 10://플레이어승리
 			System.out.println(towerLevel+"층의 수호자"+enemy.get(currentEnemy).name+"에게 승리했다!");
 			reward();//보상
+			Pokemon_Main.user.setRecordTowerLevel(recordTowerLevel);
 			System.out.println("엔터키 누르시면 메인으로 돌아갑니다.");
-			battleScan.nextLine();
+			String tmp=battleScan.nextLine();
 			Game_Display.MainScreen();
 			break;
 		case 11://플레이어몹 사망
 			System.out.println(player.get(currentPlayer).name+"가 쓰러졌다!");
 			currentPlayer+=1;
+			playerDieflag=1;
+			playerFullHp=player.get(currentPlayer).HP;
 			System.out.println("가라!"+player.get(currentPlayer).name);
 			break;
 		case 12://플레이어 패배
@@ -129,7 +137,7 @@ public class BattleTower {
 			System.out.println(enemy.get(currentEnemy).name+"는 "+pDMG+"의 피해를 입었다!.");
 			break;
 		case 63://디버프
-			System.out.println(player.get(currentPlayer).name+"의 "+Skill.getSkillNameByIndex(player.get(currentPlayer).skillIndexNum[3])+"공격!");
+			System.out.println(player.get(currentPlayer).name+"의 "+Skill.getSkillNameByIndex(player.get(currentPlayer).skillIndexNum[2])+"공격!");
 			if(pAdebuff!=0) {
 				System.out.println(enemy.get(currentEnemy).name+"의 방어가 낮아졌다.");
 			}else if(pDdebuff!=0) {
@@ -145,7 +153,7 @@ public class BattleTower {
 			System.out.println(player.get(currentPlayer).name+"는 "+eDMG+"의 피해를 입었다!.");
 			break;
 		case 73:
-			System.out.println(enemy.get(currentEnemy).name+"의 "+Skill.getSkillNameByIndex(enemy.get(currentEnemy).skillIndexNum[3])+"공격!");
+			System.out.println(enemy.get(currentEnemy).name+"의 "+Skill.getSkillNameByIndex(enemy.get(currentEnemy).skillIndexNum[2])+"공격!");
 			if(eAdebuff!=0) {
 				System.out.println(player.get(currentPlayer).name+"의 방어가 낮아졌다.");
 			}else if(eDdebuff!=0) {
@@ -181,10 +189,10 @@ public class BattleTower {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		enemyGenerator();//몸생성 enemy해쉬맵 생성
-		battlePrinter(3);//조우 대사
 		currentEnemy=1;
 		currentPlayer=1;
+		enemyGenerator();//몸생성 enemy해쉬맵 생성
+		
 		enemyFullHp=enemy.get(currentEnemy).HP;
 		playerFullHp=player.get(currentPlayer).HP;
 		pDMG=0;
@@ -199,6 +207,9 @@ public class BattleTower {
 		
 		playerDflag=0;
 		enemyDflag=0;
+		battlePrinter(3);//조우 대사
+		
+		
 		
 		
 		boolean flag = true;
@@ -224,21 +235,27 @@ public class BattleTower {
 			switch(select) {
 			case 1://싸운다
 				battle();
+				break;
 			case 2://교체한다
 				change();
 				whatEnemyDoing();
+				break;
 			case 3://포기한다.
-				System.out.println("정말로 포기하겠습니까? 포기하시려면 00을 입력해주세요. 다른 입력시 배틀로 돌아갑니다.");
+				System.out.println("정말로 포기하겠습니까? 포기하시려면 -1을 입력해주세요. 다른 입력시 배틀로 돌아갑니다.");
 					try {
-						strSel  = battleScan.next();
-						if(strSel=="00") {
+						select = battleScan.nextInt();
+						if(select==-1) {
 							System.out.println("배틀을 종료하고 메인화면으로 돌아갑니다.");
 							Game_Display.MainScreen();
+						}else {
+							System.out.println("배틀을 재개합니다.");
 						}
 					}catch (NullPointerException e) {
 						// TODO: handle exception
+						System.out.println("배틀을 재개합니다.");
 						break;
 					}
+					
 				break;
 			
 			}
@@ -260,6 +277,14 @@ public class BattleTower {
 		 *  체력 확인
 		 *  배틀 재개 혹은 종료
 		 */
+		pDMG=0;
+		eDMG=0;
+		
+		pAdebuff=0;
+		pDdebuff=0;
+		eAdebuff=0;
+		eDdebuff=0;
+		
 		System.out.println(player.get(currentPlayer).name+"은 무슨 일을 할까?");
 		for(int i=0;i<4;i++) {
 			pSkillName[i]=Skill.getSkillNameByIndex(player.get(currentPlayer).skillIndexNum[i]);
@@ -290,14 +315,19 @@ public class BattleTower {
 			fs=(int) (Math.random())/2;
 		}
 		if(fs==0) {//플레이어 선턴
+			System.out.println("나의 선공!");
+			enemyDflag=0;
+			//System.out.println("방어계산기 "+playerDflag+" "+enemyDflag);
 			switch (select) {//스킬사용
-			case 1: //자속기
+				case 1: //자속기
 				if(enemyDflag==1) {
 					battlePrinter(74);
 					break;
 				}
 				pDMG=Skill.dmgCal(player.get(currentPlayer), enemy.get(currentEnemy), player.get(currentPlayer).skillIndexNum[0]);
 				enemy.get(currentEnemy).HP=enemy.get(currentEnemy).HP-pDMG;
+				
+				battlePrinter(61);
 				if(enemy.get(currentEnemy).HP<=0) {//적 다운시
 					if(currentEnemy==3) {
 						battlePrinter(10);
@@ -305,18 +335,18 @@ public class BattleTower {
 						battlePrinter(9);
 					}
 				}//외곽if문
-				battlePrinter(61);
 				//적 행동
 				whatEnemyDoing();
 				
-				break;
-			case 2://비자속기
+					break;
+				case 2://비자속기
 				if(enemyDflag==1) {
 					battlePrinter(74);
 					break;
 				}
 				pDMG=Skill.dmgCal(player.get(currentPlayer), enemy.get(currentEnemy), player.get(currentPlayer).skillIndexNum[1]);
 				enemy.get(currentEnemy).HP=enemy.get(currentEnemy).HP-pDMG;
+				battlePrinter(62);
 				if(enemy.get(currentEnemy).HP<=0) {//적 다운시
 					if(currentEnemy==3) {
 						battlePrinter(10);
@@ -324,7 +354,6 @@ public class BattleTower {
 						battlePrinter(9);
 					}
 				}//외곽if문
-				battlePrinter(62);
 				//적 행동
 				whatEnemyDoing();
 				if(enemyDflag==1) {
@@ -342,11 +371,15 @@ public class BattleTower {
 				}else {//에러체크
 					System.out.println("오류남 스킬 이상함");
 				}
+				battlePrinter(63);
 				pAdebuff=0;
 				pDdebuff=0;
 				//적행동
 				whatEnemyDoing();
-				battlePrinter(75);
+				if(enemyDflag==1) {
+					battlePrinter(75);
+					break;
+				}
 				break;
 			case 4:
 				//방어, 적행동
@@ -361,6 +394,8 @@ public class BattleTower {
 				break;
 			}
 		}else if(fs==1) {//후공
+			System.out.println("적의 선공!");
+			enemyDflag=0;
 			switch (select) {//스킬사용
 			case 1: //자속기
 				//적 행동
@@ -369,8 +404,13 @@ public class BattleTower {
 					break;
 				}
 				whatEnemyDoing();
+				if(playerDieflag==1) {
+					playerDieflag=0;
+					break;
+				}
 				pDMG=Skill.dmgCal(player.get(currentPlayer), enemy.get(currentEnemy), player.get(currentPlayer).skillIndexNum[0]);
 				enemy.get(currentEnemy).HP=enemy.get(currentEnemy).HP-pDMG;
+				battlePrinter(61);
 				if(enemy.get(currentEnemy).HP<=0) {//적 다운시
 					if(currentEnemy==3) {
 						battlePrinter(10);
@@ -387,8 +427,13 @@ public class BattleTower {
 					break;
 				}
 				whatEnemyDoing();
+				if(playerDieflag==1) {
+					playerDieflag=0;
+					break;
+				}
 				pDMG=Skill.dmgCal(player.get(currentPlayer), enemy.get(currentEnemy), player.get(currentPlayer).skillIndexNum[1]);
 				enemy.get(currentEnemy).HP=enemy.get(currentEnemy).HP-pDMG;
+				battlePrinter(62);
 				if(enemy.get(currentEnemy).HP<=0) {//적 다운시
 					if(currentEnemy==3) {
 						battlePrinter(10);
@@ -410,10 +455,12 @@ public class BattleTower {
 				}else {//에러체크
 					System.out.println("오류남 스킬 이상함");
 				}
+				battlePrinter(63);
 				if(enemyDflag==1) {
 					battlePrinter(75);
 					break;
 				}
+				
 				pAdebuff=0;
 				pDdebuff=0;
 				break;
@@ -440,39 +487,47 @@ public class BattleTower {
 		 */
 		//적 행동패턴 
 		enemyDflag=0;
-		if(enemyPatternCnt==1) {
-			enemyDebuff();
-			battlePrinter(73);
-		}
-		else if(enemyPatternCnt==2) {
-			enemyAttack(1);
-			battlePrinter(71);
-		}
-		else if(enemyPatternCnt==3) {//비자속기
-			enemyAttack(2);
-			battlePrinter(72);
-		}
-		else if(enemyPatternCnt%5!=0) {
-			if(enemy.get(currentEnemy).HP<=enemyFullHp/2) {//반피 이하면 공격위주로 하도록
-				enemyAttack((int)Math.random()/2+1);
-			}else {
-				if(enemyPatternCnt%3<3) {
+		if(enemyDieflag==1) {
+			enemyDieflag=0;
+		
+		}else {
+			if(enemyPatternCnt==1) {
+				enemyDebuff();
+				battlePrinter(73);
+			}
+			else if(enemyPatternCnt==2) {
+				enemyAttack(1);
+				battlePrinter(71);
+			}
+			else if(enemyPatternCnt==3) {//비자속기
+				enemyAttack(2);
+				battlePrinter(72);
+			}
+			else if(enemyPatternCnt%5!=0) {
+				if(enemy.get(currentEnemy).HP<=enemyFullHp/2) {//반피 이하면 공격위주로 하도록
 					enemyAttack((int)Math.random()/2+1);
 				}else {
-					enemyDebuff();
+					if(enemyPatternCnt%3<3) {
+						enemyAttack((int)Math.random()/2+1);
+					}else {
+						enemyDebuff();
+					}
 				}
+			}
+			
+			
+			//방어태세는 5턴마다 하는걸로
+			else if(enemyPatternCnt%5==0) {
+				enemyDflag=1;
+				enemyPatternCnt++;
 			}
 		}
 		
 		
-		//방어태세는 5턴마다 하는걸로
-		if(enemyPatternCnt%5==0) {
-			enemyDflag=1;
-			enemyPatternCnt++;
-		}
 		
 	}
 	public static void enemyDebuff() {
+		//System.out.println(Skill.getSkillNameByIndex(enemy.get(currentEnemy).skillIndexNum[2]));
 		eAdebuff=Skill.ATKdebuffCal(player.get(currentPlayer),enemy.get(currentEnemy).skillIndexNum[2]);
 		eDdebuff=Skill.DEFdebuffCal(player.get(currentPlayer),enemy.get(currentEnemy).skillIndexNum[2]);
 		if(eAdebuff==0||eDdebuff!=0) {//방디벞
@@ -656,11 +711,15 @@ public class BattleTower {
 		}//선택지
 		
 		currentPlayer=select;
+		playerFullHp=player.get(currentPlayer).HP;
 		System.out.println("가라!"+player.get(currentPlayer).name);
 		
 	}
 	public static void reward() {
 		int[] candy= new int[5];//xs s m l xl
+		if(towerLevel==recordTowerLevel) {
+			recordTowerLevel+=1;
+		}
 		switch(towerLevel) {
 		case 1:
 			candy[0]=5;
