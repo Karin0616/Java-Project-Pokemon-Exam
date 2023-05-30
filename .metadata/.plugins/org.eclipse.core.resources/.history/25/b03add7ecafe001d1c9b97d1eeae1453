@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class PokemonDex {
-	private static PokemonDex PDex[] = new PokemonDex[58];//포켓몬총수
+	private static PokemonDex PDex[] = new PokemonDex[55];//포켓몬총수
 	private int indexNum;
 	private String place;
 	private String PokemonName;
@@ -33,7 +33,7 @@ public class PokemonDex {
             BufferedReader reader = new BufferedReader(new FileReader("PokemonInfo.csv"));
             String line;
             int i = 0;
-            while ((line = reader.readLine()) != null && i < 58) {//포켓몬총수
+            while ((line = reader.readLine()) != null && i < 54) {//포켓몬총수
                 String[] values = line.split(",");
                 int indexNum = Integer.parseInt(values[0]);
                 String place = values[1];

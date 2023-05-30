@@ -53,7 +53,6 @@ public class Gatcha {
 				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 				System.out.println("> 현재 위치 : "+place);
 				System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-				System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 				System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 				System.out.println("> 유효하지 않은 숫자입니다.");
 				System.out.println("> 0에서 8 사이의 숫자를 입력해주세요.");
@@ -74,31 +73,9 @@ public class Gatcha {
 			Game_Display.MainScreen();
 			break;
 		default:
-			if(Pokemon_Main.user.getMonsterBall()<=0) {//몬스터볼 0개면 진입불가
-				System.out.println("◈＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼◈");
-				System.out.println("　　　　　　　　　　　포　획　모　드　　　　　　　　　　　");
-				System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
-				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-				System.out.println("> 현재 위치 : "+place);
-				System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-				System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
-				System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
-				System.out.println("> 몬스터볼이 없으면 포획할 수 없습니다. 배틀모드를 진행해주세요.");
-				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-				System.out.println("○―――――――○　○―――――――○　○―――――――○");
-				System.out.println("｜１：　초　원　｜　｜２：　바　다　｜　｜３：　화　산　｜");
-				System.out.println("○―――――――○　○―――――――○　○―――――――○");
-				System.out.println("○―――――――○　○―――――――○　○―――――――○");
-				System.out.println("｜４：　바위산　｜　｜５：　　숲　　｜　｜６：　사　막　｜");
-				System.out.println("○―――――――○　○―――――――○　○―――――――○");
-				System.out.println("○―――――――○　○―――――――○　○―――――――○");
-				System.out.println("｜７：　동　굴　｜　｜８：　설　산　｜　｜０：　돌아가기｜");
-				System.out.println("○―――――――○　○―――――――○　○―――――――○");
-				Game_Display.MainScreen();
-				break;
-			}
+
 			map(selecter);
-			break;
+
 		}
 
 	}
@@ -111,7 +88,6 @@ public class Gatcha {
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("> 현재 위치 : "+place);
 			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-			System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 			System.out.println("> 탐색할 에리어를 선택하세요.");
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -133,7 +109,6 @@ public class Gatcha {
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("> 현재 위치 : "+place);
 			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-			System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 			System.out.println("> 어디를 조사할까요?");
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -151,7 +126,6 @@ public class Gatcha {
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("> 현재 위치 : "+place);
 			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-			System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 			System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 			System.out.println("> 무엇을 할까?");
@@ -167,7 +141,6 @@ public class Gatcha {
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("> 현재 위치 : "+place);
 			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-			System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 			System.out.println("> 어디를 조사할까요?");
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -185,7 +158,6 @@ public class Gatcha {
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("> 현재 위치 : "+place);
 			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-			System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 			System.out.println("> 어디를 조사할까요?");
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -203,7 +175,6 @@ public class Gatcha {
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("> 현재 위치 : "+place);
 			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-			System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 			System.out.println("> 어디를 조사할까요?");
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -221,7 +192,6 @@ public class Gatcha {
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("> 현재 위치 : "+place);
 			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-			System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 			System.out.println("> 어디를 조사할까요?");
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -239,7 +209,6 @@ public class Gatcha {
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("> 현재 위치 : "+place);
 			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-			System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 			System.out.println("> 어디를 조사할까요?");
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -257,7 +226,6 @@ public class Gatcha {
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("> 현재 위치 : "+place);
 			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-			System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 			System.out.println("> 어디를 조사할까요?");
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -275,7 +243,6 @@ public class Gatcha {
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("> 현재 위치 : "+place);
 			System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-			System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 			System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 			System.out.println("> 어디를 조사할까요?");
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -343,7 +310,6 @@ public class Gatcha {
 						System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 						System.out.println("> 현재 위치 : "+place);
 						System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-						System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 						System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 						System.out.println(">　1 또는 2를 입력해주세요.");
 						System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -365,7 +331,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -392,7 +357,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -412,7 +376,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -423,7 +386,7 @@ public class Gatcha {
 				}
 			}
 			if(selecter==1) {
-				
+
 				Pokemon tmP[]=Pokemon_Main.user.getPokemon();
 
 				tmP[Pokemon_Main.user.getBoxCount()]= new Pokemon(p.index,p.add,p.Lv);
@@ -431,7 +394,6 @@ public class Gatcha {
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
 				Pokemon_Main.user.setGotPokemon(tmP);
-				Pokemon_Main.user.setMonsterBallDown();
 				printer(97);
 
 			}else if(selecter==2) {
@@ -451,7 +413,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -473,7 +434,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -500,7 +460,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -520,7 +479,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -538,7 +496,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -559,7 +516,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -581,7 +537,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -608,7 +563,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -628,7 +582,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -646,7 +599,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -667,7 +619,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -689,7 +640,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -716,7 +666,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -736,7 +685,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -754,7 +702,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -775,7 +722,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -797,7 +743,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -824,7 +769,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -844,7 +788,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -862,7 +805,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -883,7 +825,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -905,7 +846,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -932,7 +872,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -952,7 +891,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -970,7 +908,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -991,7 +928,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -1013,7 +949,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -1040,7 +975,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -1060,7 +994,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -1078,7 +1011,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -1099,7 +1031,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -1121,7 +1052,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println(">　1 또는 2를 입력해주세요.");
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
@@ -1148,7 +1078,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -1168,7 +1097,6 @@ public class Gatcha {
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("> 현재 위치 : "+place);
 					System.out.println("> 현재 포켓몬 보유량 : "+Pokemon_Main.user.getBoxCount()+"/20");
-					System.out.println("> 현재 몬스터볼 보유량: "+Pokemon_Main.user.getMonsterBall()+"개");
 					System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
 					System.out.println("> 야생의 "+p.name+"["+p.Lv+"]"+"이(가) 나타났다!");
 					System.out.println(">　1 또는 2를 입력해주세요.");
@@ -1186,7 +1114,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 

@@ -13,9 +13,6 @@ public class SaveLoadManager {
             writer.newLine();
             writer.write(String.valueOf(userdata.getRecordTowerLevel()));
             writer.newLine();
-            writer.write(String.valueOf(userdata.getMonsterBall()));
-            writer.newLine();
-            
 
             int[] candies = userdata.getEXPCandyCount();
             for (int candy : candies) {
@@ -54,7 +51,6 @@ public class SaveLoadManager {
             int boxCount = Integer.parseInt(reader.readLine());
             int trainerLV = Integer.parseInt(reader.readLine());
             int recordTowerLevel = Integer.parseInt(reader.readLine());
-            int monsterBall = Integer.parseInt(reader.readLine());
             //테스트
            // System.out.println(boxCount);
           //  System.out.println(trainerLV);
@@ -69,8 +65,7 @@ public class SaveLoadManager {
             userdata.setTrainerLv(trainerLV);
             userdata.setRecordTowerLevel(recordTowerLevel);
             userdata.setEXPCandyCount(candies);
-            userdata.setMonsterBall(monsterBall);
-            
+
             Pokemon[] gotPokemon = new Pokemon[20];
             String line;
             int index = 0;

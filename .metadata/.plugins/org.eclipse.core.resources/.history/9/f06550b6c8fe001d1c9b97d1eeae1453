@@ -105,7 +105,7 @@ public class Pokemon implements Cloneable {
 	}
 	public void evolve() {
 	//진화메소드
-		//String temp = this.name;
+		String temp = this.name;
 
 		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 		System.out.println("> …… 오잉!?");

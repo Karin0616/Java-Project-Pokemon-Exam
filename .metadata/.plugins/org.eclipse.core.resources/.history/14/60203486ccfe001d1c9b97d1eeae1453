@@ -102,8 +102,6 @@ public class UserData {
 	public void setMonsterBallUp(int monsterBall) {
 		this.monsterBall += monsterBall;
 	}
-	public void setMonsterBallDown() {
-		this.monsterBall =this.monsterBall-1;
-	}
+	
 	
 }

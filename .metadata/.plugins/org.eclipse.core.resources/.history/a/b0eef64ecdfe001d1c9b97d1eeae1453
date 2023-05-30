@@ -935,7 +935,6 @@ public class BattleTower {
 	}
 	public static void reward() {
 		int[] candy= new int[5];//xs s m l xl
-		int monsterBall=0;
 		if(towerLevel==recordTowerLevel) {
 			recordTowerLevel+=1;
 		}
@@ -946,12 +945,8 @@ public class BattleTower {
 			candy[2]=0;
 			candy[3]=0;
 			candy[4]=0;
-			
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -963,9 +958,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -977,9 +969,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -991,9 +980,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1005,9 +991,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1019,9 +1002,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1033,9 +1013,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1047,9 +1024,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1061,9 +1035,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1075,9 +1046,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1089,9 +1057,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1103,9 +1068,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1117,9 +1079,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1131,9 +1090,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1145,9 +1101,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1159,9 +1112,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1173,9 +1123,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1187,9 +1134,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1201,9 +1145,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1215,9 +1156,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1229,9 +1167,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1243,9 +1178,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1257,9 +1189,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1271,9 +1200,6 @@ public class BattleTower {
 			candy[4]=0;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1285,9 +1211,6 @@ public class BattleTower {
 			candy[4]=1;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1299,9 +1222,6 @@ public class BattleTower {
 			candy[4]=1;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1313,9 +1233,6 @@ public class BattleTower {
 			candy[4]=1;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1327,9 +1244,6 @@ public class BattleTower {
 			candy[4]=1;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1341,9 +1255,6 @@ public class BattleTower {
 			candy[4]=2;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;
@@ -1355,9 +1266,6 @@ public class BattleTower {
 			candy[4]=3;
 			Pokemon_Main.user.setEXPCandyUP(candy);
 			System.out.println("> 보상으로 경험사탕 XS "+candy[0]+"개, S "+candy[1]+"개, M "+candy[2]+"개, L "+candy[3]+"개, XL "+candy[4]+"개를 획득했다!");
-			monsterBall=3;
-			Pokemon_Main.user.setMonsterBallUp(monsterBall);
-			System.out.println("> 보상으로 몬스터볼을 "+monsterBall+"개를 획득했다!");
 			Pokemon_Main.user.setTrainerLvUP(1);
 			System.out.println("> 트레이너 레벨이 "+Pokemon_Main.user.getTrainerLV()+"이 되었다!");
 			break;

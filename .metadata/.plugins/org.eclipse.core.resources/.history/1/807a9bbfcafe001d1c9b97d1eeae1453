@@ -21,7 +21,7 @@ public class UserData {
 		this.gotPokemon[2]= new Pokemon(7,5,5);
 		this.boxCount =3;
 		this.trainerLV=10;//임시
-		this.setMonsterBall(5);
+		this.monsterBall=5;
 		for(int i=0;i<Candy.length;i++) {
 			Candy[i]=0;//임시
 		}
@@ -93,17 +93,6 @@ public class UserData {
 	public void setRecordTowerLevel(int recordTowerLevel) {
 		this.recordTowerLevel = recordTowerLevel;
 	}
-	public int getMonsterBall() {
-		return monsterBall;
-	}
-	public void setMonsterBall(int monsterBall) {
-		this.monsterBall = monsterBall;
-	}
-	public void setMonsterBallUp(int monsterBall) {
-		this.monsterBall += monsterBall;
-	}
-	public void setMonsterBallDown() {
-		this.monsterBall =this.monsterBall-1;
-	}
+	
 	
 }

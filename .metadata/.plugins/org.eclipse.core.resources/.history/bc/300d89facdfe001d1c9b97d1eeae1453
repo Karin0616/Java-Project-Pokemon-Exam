@@ -538,7 +538,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -646,7 +645,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -754,7 +752,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -862,7 +859,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -970,7 +966,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -1078,7 +1073,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
@@ -1186,7 +1180,6 @@ public class Gatcha {
 
 				Pokemon_Main.user.setBoxCount(Pokemon_Main.user.getBoxCount()+1);
 				//박스카운트 변경
-				Pokemon_Main.user.setMonsterBallDown();
 				Pokemon_Main.user.setGotPokemon(tmP);
 				printer(97);
 
