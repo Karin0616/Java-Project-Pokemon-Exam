@@ -157,11 +157,11 @@ public class BattleTower {
 			break;
 		case 61://자속기 플레이어공격
 			System.out.println("> "+player.get(currentPlayer).name+"의 "+Skill.getSkillNameByIndex(player.get(currentPlayer).skillIndexNum[0])+" 공격!");
-			System.out.println("> "+enemy.get(currentEnemy).name+"은(는) "+(int)pDMG+"의 피해를 입었다!");
+			System.out.println("> "+enemy.get(currentEnemy).name+"은(는) "+pDMG+"의 피해를 입었다!");
 			break;
 		case 62://비자속기 플레이어공격
 			System.out.println("> "+player.get(currentPlayer).name+"의 "+Skill.getSkillNameByIndex(player.get(currentPlayer).skillIndexNum[1])+" 공격!");
-			System.out.println("> "+enemy.get(currentEnemy).name+"은(는) "+(int)pDMG+"의 피해를 입었다!");
+			System.out.println("> "+enemy.get(currentEnemy).name+"은(는) "+pDMG+"의 피해를 입었다!");
 			break;
 		case 63://디버프
 			System.out.println("> "+player.get(currentPlayer).name+"의 "+Skill.getSkillNameByIndex(player.get(currentPlayer).skillIndexNum[2])+" 공격!");
@@ -173,11 +173,11 @@ public class BattleTower {
 			break;
 		case 71://적공격 자속
 			System.out.println("> "+enemy.get(currentEnemy).name+"의 "+Skill.getSkillNameByIndex(enemy.get(currentEnemy).skillIndexNum[0])+" 공격!");
-			System.out.println("> "+player.get(currentPlayer).name+"은(는) "+(int)eDMG+"의 피해를 입었다!");
+			System.out.println("> "+player.get(currentPlayer).name+"은(는) "+eDMG+"의 피해를 입었다!");
 			break;
 		case 72:
 			System.out.println("> "+enemy.get(currentEnemy).name+"의 "+Skill.getSkillNameByIndex(enemy.get(currentEnemy).skillIndexNum[1])+" 공격!");
-			System.out.println("> "+player.get(currentPlayer).name+"은(는) "+(int)eDMG+"의 피해를 입었다!");
+			System.out.println("> "+player.get(currentPlayer).name+"은(는) "+eDMG+"의 피해를 입었다!");
 			break;
 		case 73:
 			System.out.println("> "+enemy.get(currentEnemy).name+"의 "+Skill.getSkillNameByIndex(enemy.get(currentEnemy).skillIndexNum[2])+" 공격!");

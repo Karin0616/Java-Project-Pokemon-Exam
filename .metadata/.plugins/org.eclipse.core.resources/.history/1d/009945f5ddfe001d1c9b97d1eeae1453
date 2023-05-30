@@ -24,12 +24,10 @@ public class BattleTower {
 	
 	protected static int enemyDieflag=0;
 	protected static int playerDieflag=0;
-	protected static int deathCnt=0;
 	
 	protected static int playerDflag=0;
 	protected static int enemyDflag=0;
 	SkillDex[] sDex = SkillDex.getInstance();
-	PokemonDex[] pDex= PokemonDex.getInstance();
 	static Scanner battleScan = new Scanner(System.in);
 	
 	
@@ -133,18 +131,9 @@ public class BattleTower {
 			break;
 		case 11://플레이어몹 사망
 			System.out.println("> "+player.get(currentPlayer).name+"이(가) 쓰러졌다!");
-			if(currentPlayer!=3) {
-				currentPlayer+=1;
-			}else if(currentPlayer==3&&deathCnt<3) {
-				for(int i=1;i<3;i++) {
-					if(player.get(i).HP>=0) {
-						currentPlayer=i;
-						break;
-					}
-				}
-			}
+			currentPlayer+=1;
 			playerDieflag=1;
-			playerFullHp=player.get(currentPlayer).pdex[player.get(currentPlayer).index].getBaseStatus(0);
+			playerFullHp=player.get(currentPlayer).HP;
 			System.out.println("> 가라! "+player.get(currentPlayer).name+"!");
 			break;
 		case 12://플레이어 패배
@@ -157,11 +146,11 @@ public class BattleTower {
 			break;
 		case 61://자속기 플레이어공격
 			System.out.println("> "+player.get(currentPlayer).name+"의 "+Skill.getSkillNameByIndex(player.get(currentPlayer).skillIndexNum[0])+" 공격!");
-			System.out.println("> "+enemy.get(currentEnemy).name+"은(는) "+(int)pDMG+"의 피해를 입었다!");
+			System.out.println("> "+enemy.get(currentEnemy).name+"은(는) "+pDMG+"의 피해를 입었다!");
 			break;
 		case 62://비자속기 플레이어공격
 			System.out.println("> "+player.get(currentPlayer).name+"의 "+Skill.getSkillNameByIndex(player.get(currentPlayer).skillIndexNum[1])+" 공격!");
-			System.out.println("> "+enemy.get(currentEnemy).name+"은(는) "+(int)pDMG+"의 피해를 입었다!");
+			System.out.println("> "+enemy.get(currentEnemy).name+"은(는) "+pDMG+"의 피해를 입었다!");
 			break;
 		case 63://디버프
 			System.out.println("> "+player.get(currentPlayer).name+"의 "+Skill.getSkillNameByIndex(player.get(currentPlayer).skillIndexNum[2])+" 공격!");
@@ -173,11 +162,11 @@ public class BattleTower {
 			break;
 		case 71://적공격 자속
 			System.out.println("> "+enemy.get(currentEnemy).name+"의 "+Skill.getSkillNameByIndex(enemy.get(currentEnemy).skillIndexNum[0])+" 공격!");
-			System.out.println("> "+player.get(currentPlayer).name+"은(는) "+(int)eDMG+"의 피해를 입었다!");
+			System.out.println("> "+player.get(currentPlayer).name+"은(는) "+eDMG+"의 피해를 입었다!");
 			break;
 		case 72:
 			System.out.println("> "+enemy.get(currentEnemy).name+"의 "+Skill.getSkillNameByIndex(enemy.get(currentEnemy).skillIndexNum[1])+" 공격!");
-			System.out.println("> "+player.get(currentPlayer).name+"은(는) "+(int)eDMG+"의 피해를 입었다!");
+			System.out.println("> "+player.get(currentPlayer).name+"은(는) "+eDMG+"의 피해를 입었다!");
 			break;
 		case 73:
 			System.out.println("> "+enemy.get(currentEnemy).name+"의 "+Skill.getSkillNameByIndex(enemy.get(currentEnemy).skillIndexNum[2])+" 공격!");
@@ -364,16 +353,14 @@ public class BattleTower {
 			break;
 		}//선택지
 		int fs=0;//0은 플레이어 1은 적
-		//System.out.println("테스트용 스피드 출력"+player.get(currentPlayer).SPD+"또 "+enemy.get(currentEnemy).SPD);
 		if(player.get(currentPlayer).SPD>enemy.get(currentEnemy).SPD) {
-			
 			fs=0;
 		}else if(player.get(currentPlayer).SPD<enemy.get(currentEnemy).SPD) {
 			fs=1;
 		}else {
 			fs=(int) (Math.random())/2;
 		}
-		
+		fs=1;
 		battlePrinter(1);
 		if(fs==0) {//플레이어 선턴
 			System.out.println("> 나의 선공!");
@@ -631,8 +618,7 @@ public class BattleTower {
 				player.get(currentPlayer).HP=player.get(currentPlayer).HP-eDMG;
 				battlePrinter(71);
 				if(player.get(currentPlayer).HP<=0) {//플레이어 다운시
-					deathCnt+=1;
-					if(deathCnt==3) {//패배
+					if(currentPlayer==3) {//패배
 						battlePrinter(12);
 					}else {
 						battlePrinter(11);
@@ -648,8 +634,7 @@ public class BattleTower {
 				player.get(currentPlayer).HP=player.get(currentPlayer).HP-eDMG;
 				battlePrinter(72);
 				if(player.get(currentPlayer).HP<=0) {//플레이어 다운시
-					deathCnt+=1;
-					if(deathCnt==3) {//패배
+					if(currentPlayer==3) {//패배
 						battlePrinter(12);
 					}else {
 						battlePrinter(11);

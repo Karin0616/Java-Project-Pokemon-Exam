@@ -23,7 +23,7 @@ public class UserData {
 		this.trainerLV=10;//임시
 		this.setMonsterBall(5);
 		for(int i=0;i<Candy.length;i++) {
-			Candy[i]=2;//임시
+			Candy[i]=0;//임시
 		}
 		
 	}
