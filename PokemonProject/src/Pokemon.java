@@ -104,9 +104,13 @@ public class Pokemon implements Cloneable {
 		
 	}
 	public void evolve() {
-	//진화메소드	
-	
-		
+	//진화메소드
+		String temp = this.name;
+
+		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+		System.out.println("> …… 오잉!?");
+		System.out.println("> "+this.name+"의 상태가……!");
+
 		this.name = pdex[this.index].getNameA();
 		this.type= pdex[this.index].getType();
 		this.eveLv = pdex[this.index].getEveLv();
@@ -114,7 +118,9 @@ public class Pokemon implements Cloneable {
 		HPCalculrator(pdex[this.index].getBaseStatus(0),add);
 		ATKDEFSPDCalculrator(pdex[this.index].getBaseStatus(1),pdex[this.index].getBaseStatus(2),pdex[this.index].getBaseStatus(3),add);
 		this.index+=1;
-		
+		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+
+		System.out.println("> 축하합니다! "+PokemonDex.getName(this.index - 1)+"은(는) "+this.name+"으로 진화했습니다!");
 	}
 	
 	protected Object clone() throws CloneNotSupportedException{//deep copy

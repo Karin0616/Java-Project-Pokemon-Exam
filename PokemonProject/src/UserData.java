@@ -19,7 +19,7 @@ public class UserData {
 		this.gotPokemon[1]= new Pokemon(4,5,5);
 		this.gotPokemon[2]= new Pokemon(7,5,5);
 		this.boxCount =3;
-		this.trainerLV=1;//임시
+		this.trainerLV=10;//임시
 		for(int i=0;i<Candy.length;i++) {
 			Candy[i]=0;//임시
 		}
