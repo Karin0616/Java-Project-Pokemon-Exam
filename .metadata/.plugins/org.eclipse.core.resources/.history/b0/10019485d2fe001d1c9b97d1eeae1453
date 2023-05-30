@@ -368,7 +368,6 @@ public class BattleTower {
 			//System.out.println("방어계산기 "+playerDflag+" "+enemyDflag);
 			switch (select) {//스킬사용
 				case 1: //자속기
-				playerDflag=0;
 				if(enemyDflag==1) {
 					battlePrinter(74);
 					break;
@@ -389,7 +388,6 @@ public class BattleTower {
 				
 					break;
 				case 2://비자속기
-				playerDflag=0;
 				if(enemyDflag==1) {
 					battlePrinter(74);
 					break;
@@ -412,7 +410,6 @@ public class BattleTower {
 				}
 				break;
 			case 3://디버프
-				playerDflag=0;
 				pAdebuff=Skill.ATKdebuffCal(enemy.get(currentEnemy),player.get(currentPlayer).skillIndexNum[2]);
 				pDdebuff=Skill.DEFdebuffCal(enemy.get(currentEnemy),player.get(currentPlayer).skillIndexNum[2]);
 				if(pAdebuff==0||pDdebuff!=0) {//방디벞
@@ -434,20 +431,14 @@ public class BattleTower {
 				break;
 			case 4:
 				//방어, 적행동
-				if(playerDflag==1) {
-					System.out.println("> "+player.get(currentPlayer).name+"는 방어에 실패했다!");
-					playerDflag=0;
-				}else {
-					playerDflag=1;
-					System.out.println("> "+player.get(currentPlayer).name+"는 방어 태세에 들어갔다.");
-				}
-				
+				playerDflag=1;
+				System.out.println("> "+player.get(currentPlayer).name+"는 방어 태세에 들어갔다.");
 				whatEnemyDoing();
 				if(enemyDflag==1) {
 					battlePrinter(75);
 					break;
 				}
-				
+				playerDflag=0;
 				break;
 			}
 		}else if(fs==1) {//후공
@@ -456,7 +447,6 @@ public class BattleTower {
 			switch (select) {//스킬사용
 			case 1: //자속기
 				//적 행동
-				playerDflag=0;
 				whatEnemyDoing();
 				if(enemyDflag==1) {
 					battlePrinter(74);
@@ -480,7 +470,6 @@ public class BattleTower {
 				break;
 			case 2://비자속기
 				//적 행동
-				playerDflag=0;
 				whatEnemyDoing();
 				if(enemyDflag==1) {
 					battlePrinter(74);
@@ -504,7 +493,6 @@ public class BattleTower {
 				break;
 			case 3://디버프
 				//적행동
-				playerDflag=0;
 				whatEnemyDoing();
 				pAdebuff=Skill.ATKdebuffCal(enemy.get(currentEnemy),player.get(currentPlayer).skillIndexNum[2]);
 				pDdebuff=Skill.DEFdebuffCal(enemy.get(currentEnemy),player.get(currentPlayer).skillIndexNum[2]);
@@ -526,19 +514,14 @@ public class BattleTower {
 				break;
 			case 4:
 				//방어, 적행동
-				if(playerDflag==1) {
-					System.out.println("> "+player.get(currentPlayer).name+"는 방어에 실패했다!");
-					playerDflag=0;
-				}else {
-					playerDflag=1;
-					System.out.println("> "+player.get(currentPlayer).name+"는 방어 태세에 들어갔다.");
-				}
+				playerDflag=1;
+				System.out.println("> "+player.get(currentPlayer).name+"는 방어 태세에 들어갔다.");
 				whatEnemyDoing();
 				if(enemyDflag==1) {
 					battlePrinter(75);
 					break;
 				}
-				
+				playerDflag=0;
 				break;
 			}
 		}//후공끝
