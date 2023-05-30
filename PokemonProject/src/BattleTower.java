@@ -48,9 +48,9 @@ public class BattleTower {
 				System.out.println("> "+towerLevel+"층은 존재하지 않습니다.");
 				System.out.println("> 1에서 30 사이의 정수를 입력해주세요.");
 				battlePrinter(1);
-				System.out.println("○―――――――――――――――――○　○―――――――○");
+				System.out.println("○－－－－－－－－－－－－－－－－－○　○－－－－－－－○");
 				System.out.println("｜Ｎ：　Ｎ층으로　이동　　　　　　　｜　｜０：　　타이틀｜");
-				System.out.println("○―――――――――――――――――○　○―――――――○");
+				System.out.println("○－－－－－－－－－－－－－－－－－○　○－－－－－－－○");
 				
 			}else if(towerLevel>recordTowerLevel) {
 				//입력값이 최고기록보다 높을 때
@@ -61,9 +61,9 @@ public class BattleTower {
 				System.out.println("> 입력하신 층은 현재 도전하실 수 없습니다.");
 				System.out.println("> 이전 층을 먼저 클리어해주세요.");
 				battlePrinter(1);
-				System.out.println("○―――――――――――――――――○　○―――――――○");
+				System.out.println("○－－－－－－－－－－－－－－－－－○　○－－－－－－－○");
 				System.out.println("｜Ｎ：　Ｎ층으로　이동　　　　　　　｜　｜０：　　타이틀｜");
-				System.out.println("○―――――――――――――――――○　○―――――――○");
+				System.out.println("○－－－－－－－－－－－－－－－－－○　○－－－－－－－○");
 			}else {
 				switch(towerLevel) {
 				case 0:
@@ -101,16 +101,16 @@ public class BattleTower {
 			for (int i = 0; i < 25 - String.format("%.2f", enemy.get(currentEnemy).HP).length() - String.valueOf(enemyFullHp).length(); i++) System.out.print("　");
 			System.out.println("ＨＰ："+Game_Display.toFull(String.format("%.2f", enemy.get(currentEnemy).HP))+"／"+Game_Display.toFull(String.valueOf(enemyFullHp)));
 			System.out.println("　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
-			System.out.println("　　　　　　　　――――　Ｖ　Ｓ　――――　　　　　　　　");
+			System.out.println("　　　　　　　　－－－－　Ｖ　Ｓ　－－－－　　　　　　　　");
 			System.out.println("　　　　　　　　　　　　　　　　　　　　　　　　　　　　　");
 			System.out.println(player.get(currentPlayer).name + "　Ｌｖ．" + Game_Display.toFull(String.valueOf(player.get(currentPlayer).Lv)));
 			System.out.println("ＨＰ："+Game_Display.toFull(String.format("%.2f", player.get(currentPlayer).HP))+"／"+Game_Display.toFull(String.valueOf(playerFullHp)));
 			battlePrinter(1);
 			System.out.println("> 무엇을 할까?");
 			battlePrinter(1);
-			System.out.println("○―――――――○　○―――――――○　○―――――――○");
+			System.out.println("○－－－－－－－○　○－－－－－－－○　○－－－－－－－○");
 			System.out.println("｜１：　싸운다　｜　｜２：　교체한다｜　｜３：　포기한다｜");
-			System.out.println("○―――――――○　○―――――――○　○―――――――○");
+			System.out.println("○－－－－－－－○　○－－－－－－－○　○－－－－－－－○");
 			break;
 		
 		
@@ -330,20 +330,20 @@ public class BattleTower {
 			pSkillName[i]=Skill.getSkillNameByIndex(player.get(currentPlayer).skillIndexNum[i]);
 			eSkillName[i]=Skill.getSkillNameByIndex(enemy.get(currentEnemy).skillIndexNum[i]);
 		}
-		System.out.println("○――――――――――――○　○――――――――――――○");
+		System.out.println("○－－－－－－－－－－－－○　○－－－－－－－－－－－－○");
 		System.out.print("｜１：　"+pSkillName[0]);
 		for (int i = 0; i < 9 - pSkillName[0].length(); i++) System.out.print("　");
 		System.out.print("｜　｜２：　"+pSkillName[1]);
 		for (int i = 0; i < 9 - pSkillName[1].length(); i++) System.out.print("　");
 		System.out.println("｜");
-		System.out.println("○――――――――――――○　○――――――――――――○");
-		System.out.println("○――――――――――――○　○――――――――――――○");
+		System.out.println("○－－－－－－－－－－－－○　○－－－－－－－－－－－－○");
+		System.out.println("○－－－－－－－－－－－－○　○－－－－－－－－－－－－○");
 		System.out.print("｜３：　"+pSkillName[2]);
 		for (int i = 0; i < 9 - pSkillName[2].length(); i++) System.out.print("　");
 		System.out.print("｜　｜４：　"+pSkillName[3]);
 		for (int i = 0; i < 9 - pSkillName[3].length(); i++) System.out.print("　");
 		System.out.println("｜");
-		System.out.println("○――――――――――――○　○――――――――――――○");
+		System.out.println("○－－－－－－－－－－－－○　○－－－－－－－－－－－－○");
 		int select =0;
 		while(true) {//스킬입력
 			try {
@@ -916,23 +916,23 @@ public class BattleTower {
 		battlePrinter(1);
 		System.out.println("> 바꿀 포켓몬을 선택해주세요.");
 		battlePrinter(1);
-		System.out.println("○―――현재―포켓몬―――○　○―――바꿀―포켓몬―――○");
+		System.out.println("○－－－현재－포켓몬－－－○　○－－－바꿀－포켓몬－－－○");
 		System.out.print("｜　　　" + player.get(currentPlayer).name);
 		for (int i = 0; i < 9 - player.get(currentPlayer).name.length(); i++) System.out.print("　");
 		System.out.print("｜　｜１：　" + player.get(1).name);
 		for (int i = 0; i < 9 - player.get(1).name.length(); i++) System.out.print("　");
 		System.out.println("｜");
-		System.out.println("○――――――――――――○　○――――――――――――○");
-		System.out.println("　　　　　　　　　　　　　　　○――――――――――――○");
+		System.out.println("○－－－－－－－－－－－－○　○－－－－－－－－－－－－○");
+		System.out.println("　　　　　　　　　　　　　　　○－－－－－－－－－－－－○");
 		System.out.print("　　　　　　　　　　　　　　　｜２：　" + player.get(2).name);
 		for (int i = 0; i < 9 - player.get(2).name.length(); i++) System.out.print("　");
 		System.out.println("｜");
-		System.out.println("　　　　　　　　　　　　　　　○――――――――――――○");
-		System.out.println("　　　　　　　　　　　　　　　○――――――――――――○");
+		System.out.println("　　　　　　　　　　　　　　　○－－－－－－－－－－－－○");
+		System.out.println("　　　　　　　　　　　　　　　○－－－－－－－－－－－－○");
 		System.out.print("　　　　　　　　　　　　　　　｜３：　" + player.get(3).name);
 		for (int i = 0; i < 9 - player.get(3).name.length(); i++) System.out.print("　");
 		System.out.println("｜");
-		System.out.println("　　　　　　　　　　　　　　　○――――――――――――○");
+		System.out.println("　　　　　　　　　　　　　　　○－－－－－－－－－－－－○");
 		int select=0;
 		while(true) {//스킬입력
 			try {

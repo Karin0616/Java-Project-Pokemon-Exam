@@ -35,11 +35,11 @@ public class Game_Display {
 		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 		System.out.println("> 원하는 메뉴를 선택해주세요.");
 		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-		System.out.println("　　　　　　　　　　　             ◈――――――――◈");
+		System.out.println("　　　　　　　　　　　             ◈－－－－－－－－◈");
 		System.out.println("　　　　　　　　　　　             ｜［１］　처음부터｜");
 		System.out.println("　　　　　　　　　　　             ｜［２］　불러오기｜");
 		System.out.println("　　　　　　　　　　　             ｜［３］　　끝내기｜");
-		System.out.println("　　　　　　　　　　　             ◈――――――――◈");
+		System.out.println("　　　　　　　　　　　             ◈－－－－－－－－◈");
 		while(true) {
 			try {
 				num= Game_Display.GameScan.nextInt();
@@ -51,11 +51,11 @@ public class Game_Display {
 				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 				System.out.println("> 정수를 입력해주세요.");
 				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-				System.out.println("　　　　　　　　　　　             ◈――――――――◈");
+				System.out.println("　　　　　　　　　　　             ◈－－－－－－－－◈");
 				System.out.println("　　　　　　　　　　　             ｜［１］　처음부터｜");
 				System.out.println("　　　　　　　　　　　             ｜［２］　불러오기｜");
 				System.out.println("　　　　　　　　　　　             ｜［３］　　끝내기｜");
-				System.out.println("　　　　　　　　　　　             ◈――――――――◈");
+				System.out.println("　　　　　　　　　　　             ◈－－－－－－－－◈");
 			}
 			
 			if(num>0&&num<4) {
@@ -84,11 +84,11 @@ public class Game_Display {
 				System.out.println("> 유효하지 않은 숫자입니다.");
 				System.out.println("> 다시 입력해주세요.");
 				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-				System.out.println("　　　　　　　　　　　             ◈――――――――◈");
+				System.out.println("　　　　　　　　　　　             ◈－－－－－－－－◈");
 				System.out.println("　　　　　　　　　　　             ｜［１］　처음부터｜");
 				System.out.println("　　　　　　　　　　　             ｜［２］　불러오기｜");
 				System.out.println("　　　　　　　　　　　             ｜［３］　　끝내기｜");
-				System.out.println("　　　　　　　　　　　             ◈――――――――◈");
+				System.out.println("　　　　　　　　　　　             ◈－－－－－－－－◈");
 			}
 			
 		}
@@ -105,12 +105,12 @@ public class Game_Display {
 		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 		System.out.println("> 원하는 메뉴를 선택해주세요.");
 		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-		System.out.println("○―――――――○　○―――――――○　○―――――――○");
+		System.out.println("○－－－－－－－○　○－－－－－－－○　○－－－－－－－○");
 		System.out.println("｜１：　대전모드｜　｜２：　포획모드｜　｜３：포켓몬박스｜");
-		System.out.println("○―――――――○　○―――――――○　○―――――――○");
-		System.out.println("　　　　　　　　　　○―――――――○　○―――――――○");
+		System.out.println("○－－－－－－－○　○－－－－－－－○　○－－－－－－－○");
+		System.out.println("　　　　　　　　　　○－－－－－－－○　○－－－－－－－○");
 		System.out.println("　　　　　　　　　　｜４：　저장한다｜　｜５：　타이틀로｜");
-		System.out.println("　　　　　　　　　　○―――――――○　○―――――――○");
+		System.out.println("　　　　　　　　　　○－－－－－－－○　○－－－－－－－○");
 		while(true) {
 			try {
 				num= Game_Display.GameScan.nextInt();
@@ -122,12 +122,12 @@ public class Game_Display {
 				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 				System.out.println("> 정수를 입력해주세요.");
 				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-				System.out.println("○―――――――○　○―――――――○　○―――――――○");
+				System.out.println("○－－－－－－－○　○－－－－－－－○　○－－－－－－－○");
 				System.out.println("｜１：　대전모드｜　｜２：　포획모드｜　｜３：포켓몬박스｜");
-				System.out.println("○―――――――○　○―――――――○　○―――――――○");
-				System.out.println("　　　　　　　　　　○―――――――○　○―――――――○");
+				System.out.println("○－－－－－－－○　○－－－－－－－○　○－－－－－－－○");
+				System.out.println("　　　　　　　　　　○－－－－－－－○　○－－－－－－－○");
 				System.out.println("　　　　　　　　　　｜４：　저장한다｜　｜５：　타이틀로｜");
-				System.out.println("　　　　　　　　　　○―――――――○　○―――――――○");
+				System.out.println("　　　　　　　　　　○－－－－－－－○　○－－－－－－－○");
 			}
 			if(num>0&&num<6) {
 				switch(num) {
@@ -158,12 +158,12 @@ public class Game_Display {
 				System.out.println("> 유효하지 않은 숫자입니다.");
 				System.out.println("> 다시　입력해주세요.");
 				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-				System.out.println("○―――――――○　○―――――――○　○―――――――○");
+				System.out.println("○－－－－－－－○　○－－－－－－－○　○－－－－－－－○");
 				System.out.println("｜１：　대전모드｜　｜２：　포획모드｜　｜３：포켓몬박스｜");
-				System.out.println("○―――――――○　○―――――――○　○―――――――○");
-				System.out.println("　　　　　　　　　　○―――――――○　○―――――――○");
+				System.out.println("○－－－－－－－○　○－－－－－－－○　○－－－－－－－○");
+				System.out.println("　　　　　　　　　　○－－－－－－－○　○－－－－－－－○");
 				System.out.println("　　　　　　　　　　｜４：　저장한다｜　｜５：　타이틀로｜");
-				System.out.println("　　　　　　　　　　○―――――――○　○―――――――○");
+				System.out.println("　　　　　　　　　　○－－－－－－－○　○－－－－－－－○");
 			}
 		}
 			
@@ -176,13 +176,13 @@ public class Game_Display {
 		System.out.println("◈／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／＼／◈");
 		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 		System.out.println("> 현재 최고층 : "+BattleTower.recordTowerLevel+"/30");
-		System.out.println("　　　　　　　―――――――◈―――――――　　　　　　　");
+		System.out.println("　　　　　　　－－－－－－－◈－－－－－－－　　　　　　　");
 		System.out.println("> 도전하실 층을 입력해주세요.");
 		System.out.println("> 도전을 취소하시고 싶으시다면 0을 눌러주세요.");
 		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-		System.out.println("○―――――――――――――――――○　○―――――――○");
+		System.out.println("○－－－－－－－－－－－－－－－－－○　○－－－－－－－○");
 		System.out.println("｜Ｎ：　Ｎ층으로　이동　　　　　　　｜　｜０：　　타이틀｜");
-		System.out.println("○―――――――――――――――――○　○―――――――○");
+		System.out.println("○－－－－－－－－－－－－－－－－－○　○－－－－－－－○");
 		BattleTower.BattleTowerScene();
 		
 	}
