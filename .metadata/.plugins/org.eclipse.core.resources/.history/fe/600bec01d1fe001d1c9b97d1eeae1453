@@ -42,7 +42,7 @@ public class UserData {
 		//System.out.println(gotPokemon[boxCount-1].name);
 	}
 	public void removePokemon(int num) {
-		for(int i=num;i<this.boxCount-1;i++) {
+		for(int i=num-1;i<this.boxCount-1;i++) {
 			this.gotPokemon[i]=this.gotPokemon[i+1];
 		}
 		this.boxCount-=1;
