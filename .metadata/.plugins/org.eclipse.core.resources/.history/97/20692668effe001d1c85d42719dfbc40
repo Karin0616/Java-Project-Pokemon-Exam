@@ -179,7 +179,7 @@ public class PokemonBox {
 		System.out.println("> 돌아가시려면 9번을 입력해주세요.");
 		System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 		System.out.println("○－－－－－－－○　○－－－－－－－○　○－－－－－－－○");
-		System.out.println("｜0：　Ｘ　Ｓ　｜　｜１：　　Ｓ　　｜　｜２：　　Ｍ　　｜");
+		System.out.println("｜１：　Ｘ　Ｓ　｜　｜１：　　Ｓ　　｜　｜２：　　Ｍ　　｜");
 		System.out.println("○－－－－－－－○　○－－－－－－－○　○－－－－－－－○");
 		System.out.println("○－－－－－－－○　○－－－－－－－○　○－－－－－－－○");
 		System.out.println("｜３：　　Ｌ　　｜　｜４：　Ｘ　Ｌ　｜　｜９：　돌아가기｜");

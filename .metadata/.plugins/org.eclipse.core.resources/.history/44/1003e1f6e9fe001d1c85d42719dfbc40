@@ -144,7 +144,7 @@ public class BattleTower {
 				}
 			}
 			playerDieflag=1;
-			playerFullHp=player.get(currentPlayer).HPCalReturner(player.get(currentPlayer).pdex[player.get(currentPlayer).index-1].getBaseStatus(0), player.get(currentPlayer).add);  
+			playerFullHp=player.get(currentPlayer).pdex[player.get(currentPlayer).index-1].getBaseStatus(0);
 			System.out.println("> 가라! "+player.get(currentPlayer).name+"!");
 			break;
 		case 12://플레이어 패배
@@ -268,8 +268,6 @@ public class BattleTower {
 				break;
 			case 2://교체한다
 				change();
-				playerDflag=0;
-				enemyDieflag=0;
 				whatEnemyDoing();
 				break;
 			case 3://포기한다.

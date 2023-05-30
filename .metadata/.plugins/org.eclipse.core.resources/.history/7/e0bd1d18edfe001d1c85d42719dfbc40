@@ -269,7 +269,6 @@ public class BattleTower {
 			case 2://교체한다
 				change();
 				playerDflag=0;
-				enemyDieflag=0;
 				whatEnemyDoing();
 				break;
 			case 3://포기한다.
